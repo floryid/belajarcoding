@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Level 7 - Layout dan Styling</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            background-color: white;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        /* Layout Styling */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 30%;
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .box img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .box h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .box {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box {
+                width: 100%;
+            }
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Level 7 - Layout dan Styling</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level3.html">Level 3</a></li>
+            <li><a href="level4.html">Level 4</a></li>
+            <li><a href="level5.html">Level 5</a></li>
+            <li><a href="level6.html">Level 6</a></li>
+            <li><a href="level7.html">Level 7</a></li>
+            <li><a href="level8.html">Level 8</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>1. Layout dengan Flexbox</h2>
+            <div class="container">
+                <div class="box">
+                    <h3>Box 1</h3>
+                    <img src="https://via.placeholder.com/300" alt="Image 1">
+                    <p>Deskripsi untuk Box 1. Box ini menggunakan Flexbox untuk layout responsif.</p>
+                </div>
+                <div class="box">
+                    <h3>Box 2</h3>
+                    <img src="https://via.placeholder.com/300" alt="Image 2">
+                    <p>Deskripsi untuk Box 2. Menggunakan Flexbox untuk layout.</p>
+                </div>
+                <div class="box">
+                    <h3>Box 3</h3>
+                    <img src="https://via.placeholder.com/300" alt="Image 3">
+                    <p>Deskripsi untuk Box 3. Flexbox memastikan tata letak responsif.</p>
+                </div>
+            </div>
+
+            <p><strong>Contoh Kode HTML untuk Layout:</strong></p>
+            <pre>
+&lt;div class="container"&gt;
+    &lt;div class="box"&gt;
+        &lt;h3&gt;Box 1&lt;/h3&gt;
+        &lt;img src="https://via.placeholder.com/300" alt="Image 1"&gt;
+        &lt;p&gt;Deskripsi untuk Box 1. Box ini menggunakan Flexbox untuk layout responsif.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="box"&gt;
+        &lt;h3&gt;Box 2&lt;/h3&gt;
+        &lt;img src="https://via.placeholder.com/300" alt="Image 2"&gt;
+        &lt;p&gt;Deskripsi untuk Box 2. Menggunakan Flexbox untuk layout.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="box"&gt;
+        &lt;h3&gt;Box 3&lt;/h3&gt;
+        &lt;img src="https://via.placeholder.com/300" alt="Image 3"&gt;
+        &lt;p&gt;Deskripsi untuk Box 3. Flexbox memastikan tata letak responsif.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+
+            <h2>2. Kode CSS untuk Flexbox</h2>
+            <p><strong>Contoh Kode CSS:</strong></p>
+            <pre>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    background-color: white;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+/* Layout Styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 30%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.box img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.box h3 {
+    text-align: center;
+    color: #333;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .box {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        width: 100%;
+    }
+}
+
+pre {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    overflow-x: auto;
+}
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Level 5</title>
+    <style>
+        /* Gaya Umum */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Gaya Navigasi */
+        
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+
+        /* Gaya Form */
+        .form-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container input,
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Canvas */
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* Flexbox */
+        .flex-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        .flex-item {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            flex: 1 1 200px;
+            text-align: center;
+        }
+
+        /* Animasi CSS */
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background-color: #4CAF50;
+            margin: auto;
+            animation: bounce 2s infinite alternate;
+        }
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Style untuk menampilkan kode */
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            display: block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Level 5</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level3.html">Level 3</a></li>
+            <li><a href="level4.html">Level 4</a></li>
+            <li><a href="level5.html">Level 5</a></li>
+            <li><a href="level6.html">Level 6</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Form HTML -->
+        <section>
+            <h2>1. Form HTML Lanjutan</h2>
+            <p>Berikut adalah contoh form HTML untuk mengambil nama dan email pengguna:</p>
+            <pre><code>&lt;form action=&quot;/submit&quot; method=&quot;POST&quot;&gt;
+  &lt;label for=&quot;name&quot;&gt;Nama:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required&gt;
+
+  &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+
+  &lt;button type=&quot;submit&quot;&gt;Kirim&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        </section>
+
+        <!-- Elemen Canvas -->
+        <section>
+            <h2>2. Elemen Canvas</h2>
+            <p>Berikut adalah contoh penggunaan elemen &lt;canvas&gt; untuk menggambar lingkaran dengan JavaScript:</p>
+            <pre><code>&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  const canvas = document.getElementById(&quot;myCanvas&quot;);
+  const ctx = canvas.getContext(&quot;2d&quot;);
+  ctx.beginPath();
+  ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = &quot;#4CAF50&quot;;
+  ctx.fill();
+  ctx.stroke();
+&lt;/script&gt;</code></pre>
+        </section>
+
+        <!-- Flexbox CSS -->
+        <section>
+            <h2>3. Layout dengan Flexbox</h2>
+            <p>Berikut adalah contoh penggunaan Flexbox untuk mengatur layout responsif:</p>
+            <pre><code>&lt;div class=&quot;flex-container&quot;&gt;
+  &lt;div class=&quot;flex-item&quot;&gt;Item 1&lt;/div&gt;
+  &lt;div class=&quot;flex-item&quot;&gt;Item 2&lt;/div&gt;
+  &lt;div class=&quot;flex-item&quot;&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </section>
+
+        <!-- Animasi CSS -->
+        <section>
+            <h2>4. Animasi CSS Sederhana</h2>
+            <p>Berikut adalah contoh animasi CSS untuk membuat elemen bergerak naik-turun:</p>
+            <pre><code>&lt;div class=&quot;animated-box&quot;&gt;&lt;/div&gt;
+
+&lt;style&gt;
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+  .animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    animation: bounce 2s infinite alternate;
+  }
+&lt;/style&gt;</code></pre>
+        </section>
+    </main>
+
+</body>
+</html>

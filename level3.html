@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Level 3</title>
+    <style>
+        /* Gaya dasar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav ul {
+            background-color: #333;
+            overflow: hidden;
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+         /* Responsif untuk tampilan mobile */
+         @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Level 3</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level3.html">Level 3</a></li>
+            <li><a href="level4.html">Level 4</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Data Attributes -->
+        <section>
+            <h2>1. Atribut Data (data-*)</h2>
+            <p>Atribut <code>data-*</code> digunakan untuk menyimpan data kustom di dalam elemen HTML. Ini sangat berguna untuk aplikasi dinamis yang memerlukan informasi tambahan.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;div data-product-id="12345" data-price="250000"&gt;
+    Produk dengan ID dan Harga Tertentu
+&lt;/div&gt;
+            </pre>
+            <p>Dalam JavaScript, data ini dapat diambil dengan:</p>
+            <pre>
+let productDiv = document.querySelector("div");
+console.log(productDiv.dataset.productId); // Output: 12345
+console.log(productDiv.dataset.price);     // Output: 250000
+            </pre>
+        </section>
+
+        <!-- HTML5 API: Geolocation -->
+        <section>
+            <h2>2. API Geolocation HTML5</h2>
+            <p>API Geolocation memungkinkan akses ke lokasi geografis pengguna (dengan izin pengguna). Hal ini bermanfaat untuk aplikasi yang memerlukan informasi lokasi, seperti peta atau layanan berbasis lokasi.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;button onclick="getLocation()"&gt;Dapatkan Lokasi Anda&lt;/button&gt;
+&lt;p id="location"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        document.getElementById("location").innerText = "Geolocation tidak didukung.";
+    }
+}
+
+function showPosition(position) {
+    document.getElementById("location").innerText = 
+        "Latitude: " + position.coords.latitude + 
+        ", Longitude: " + position.coords.longitude;
+}
+&lt;/script&gt;
+            </pre>
+        </section>
+
+        <!-- HTML5 API: Local Storage -->
+        <section>
+            <h2>3. Penyimpanan Lokal (Local Storage)</h2>
+            <p>Local Storage adalah fitur HTML5 yang memungkinkan penyimpanan data dalam browser tanpa kadaluarsa. Data ini dapat diakses bahkan setelah pengguna menutup browser.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;button onclick="saveData()"&gt;Simpan Data&lt;/button&gt;
+&lt;button onclick="showData()"&gt;Tampilkan Data&lt;/button&gt;
+
+&lt;script&gt;
+function saveData() {
+    localStorage.setItem("username", "florysec");
+}
+
+function showData() {
+    alert("Username: " + localStorage.getItem("username"));
+}
+&lt;/script&gt;
+            </pre>
+        </section>
+
+        <!-- Elemen Canvas -->
+        <section>
+            <h2>4. Elemen Canvas</h2>
+            <p>Elemen <code>&lt;canvas&gt;</code> adalah area grafis yang digunakan untuk menggambar bentuk, grafik, atau gambar dalam aplikasi. <code>canvas</code> dapat diakses dan dimanipulasi dengan JavaScript untuk menghasilkan visualisasi dinamis.</p>
+            
+            <h3>Contoh Gambar Persegi Panjang:</h3>
+            <pre>
+&lt;canvas id="myCanvas" width="200" height="100"&gt;Canvas tidak didukung oleh browser ini.&lt;/canvas&gt;
+
+&lt;script&gt;
+let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(20, 20, 150, 75);
+&lt;/script&gt;
+            </pre>
+        </section>
+
+        <!-- Input Range dengan Output -->
+        <section>
+            <h2>5. Elemen Input Range dan Output</h2>
+            <p>HTML5 memperkenalkan tipe input <code>range</code> yang memungkinkan pengguna memilih nilai dalam rentang tertentu. Ini dapat dipasangkan dengan elemen <code>&lt;output&gt;</code> untuk menampilkan nilai yang dipilih.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;label for="volume"&gt;Volume:&lt;/label&gt;
+&lt;input type="range" id="volume" name="volume" min="0" max="100" oninput="volumeOutput.value = volume.value"&gt;
+&lt;output id="volumeOutput"&gt;50&lt;/output&gt;
+            </pre>
+        </section>
+
+        <!-- Elemen Details dan Summary -->
+        <section>
+            <h2>6. Elemen Details dan Summary</h2>
+            <p>Elemen <code>&lt;details&gt;</code> memungkinkan pengguna untuk memperluas atau menyembunyikan konten. Elemen <code>&lt;summary&gt;</code> memberikan judul bagi konten tersembunyi tersebut.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;details&gt;
+    &lt;summary&gt;Klik untuk melihat lebih lanjut&lt;/summary&gt;
+    &lt;p&gt;Ini adalah konten tersembunyi yang dapat dilihat saat klik.&lt;/p&gt;
+&lt;/details&gt;
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

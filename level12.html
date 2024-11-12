@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar HTML dan CSS</title>
+    <style>
+        /* Reset dan standar padding margin */
+        * body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        
+            
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+        main {
+            padding: 100px 20px 20px; /* Padding top untuk memberi ruang di bawah header */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin: 40px 0;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Kode yang ditampilkan */
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            overflow-x: auto;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        /* Kode Gaya */
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Tombol salin */
+        .copy-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .copy-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Section Card */
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animasi Reel */
+        .reel-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .reel-content {
+            width: 32%;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .reel-content:hover {
+            transform: scale(1.05);
+        }
+
+        .reel-img {
+            width: 100%;
+            height: 200px;
+            background: #e5e5e5;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .reel-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .reel-content p {
+            font-size: 0.95rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .reel-container {
+                flex-direction: column;
+            }
+
+            .reel-content {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Belajar HTML dan CSS</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level10.html">Level 10</a></li>
+            <li><a href="level11.html">Level 11</a></li>
+            <li><a href="level12.html">Level 12</a></li>
+            <li><a href="level13.html">Level 13</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="section">
+                <h2>Contoh Kode HTML</h2>
+                <p>Berikut adalah contoh kode HTML dasar untuk halaman web Anda. Anda dapat menyalin dan menggunakannya di proyek Anda sendiri.</p>
+                <button class="copy-btn" onclick="copyCode('html-code')">Salin Kode</button>
+                <pre id="html-code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Contoh Kode HTML&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;h1&gt;Selamat datang di Website&lt;/h1&gt;
+        &lt;/header&gt;
+        &lt;main&gt;
+            &lt;section&gt;
+                &lt;p&gt;Ini adalah contoh paragraf HTML&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/main&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            </section>
+
+            <section class="section">
+                <h2>Contoh Kode CSS</h2>
+                <p>Ini adalah contoh kode CSS yang dapat Anda terapkan untuk memberikan gaya pada elemen-elemen HTML di halaman Anda.</p>
+                <button class="copy-btn" onclick="copyCode('css-code')">Salin Kode</button>
+                <pre id="css-code">
+/* Gaya untuk Halaman */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Gaya untuk Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Gaya untuk Kartu */
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+                </pre>
+            </section>
+
+            <section class="section card">
+                <h2>Contoh Section dengan Card</h2>
+                <p>Section ini menunjukkan penggunaan kartu (card) yang sering digunakan dalam desain modern untuk menampilkan informasi dengan cara yang lebih menarik dan terstruktur.</p>
+                <div class="card">
+                    <h3>Judul Kartu</h3>
+                    <p>Ini adalah konten dari kartu. Anda bisa menambah gambar, teks, atau bahkan tombol di dalam kartu ini.</p>
+                </div>
+                <div class="card">
+                    <h3>Judul Kartu 2</h3>
+                    <p>Card kedua dengan gaya yang sama, namun konten berbeda. Setiap kartu dapat disesuaikan dengan kebutuhan desain Anda.</p>
+                </div>
+            </section>
+
+            <section class="reel-container">
+                <div class="reel-content">
+                    <div class="reel-img"></div>
+                    <h3>Belajar HTML</h3>
+                    <p>Pahami dasar-dasar HTML dan mulai membuat halaman web yang sederhana. HTML adalah fondasi dari setiap halaman web.</p>
+                </div>
+                <div class="reel-content">
+                    <div class="reel-img"></div>
+                    <h3>Belajar CSS</h3>
+                    <p>Dengan CSS, Anda dapat mempercantik halaman web Anda. Pelajari cara mengubah warna, ukuran, dan posisi elemen di halaman.</p>
+                </div>
+                <div class="reel-content">
+                    <div class="reel-img"></div>
+                    <h3>Interaktivitas dengan JavaScript</h3>
+                    <p>Tambahkan interaktivitas pada halaman web Anda dengan JavaScript. Pelajari cara membuat elemen menjadi dinamis.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function copyCode(id) {
+            var code = document.getElementById(id);
+            var range = document.createRange();
+            range.selectNode(code);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+        }
+    </script>
+</body>
+</html>

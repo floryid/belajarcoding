@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar HTML dan CSS Modern</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-areas: 
+                "header"
+                "nav"
+                "main"
+                "aside"
+                "footer";
+            grid-template-rows: auto;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            grid-area: header;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Navigasi (Flexbox) */
+        nav {
+            grid-area: nav;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Konten Utama */
+        main {
+            grid-area: main;
+            background-color: #f4f4f4;
+            padding: 1rem;
+        }
+
+        main h2 {
+            margin-bottom: 1rem;
+            font-size: 24px;
+        }
+
+        main section {
+            margin-bottom: 1.5rem;
+        }
+
+        main p {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Sidebar */
+        aside {
+            grid-area: aside;
+            background-color: #ddd;
+            padding: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            grid-area: footer;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (min-width: 768px) {
+            body {
+                grid-template-areas: 
+                    "header header header"
+                    "nav nav nav"
+                    "main main aside"
+                    "footer footer footer";
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Belajar HTML dan CSS Modern</h1>
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <a href="level12.html">Level 12</a>
+        <a href="level14.html">Level 14</a>
+        <a href="#html-materi">HTML</a>
+        <a href="#css-materi">CSS</a>
+        <a href="#flexbox">Flexbox</a>
+        <a href="#grid">CSS Grid</a>
+        <a href="#responsif">Responsif</a>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main>
+        <section id="html-materi">
+            <h2>HTML: Struktur Dasar</h2>
+            <p>HTML (HyperText Markup Language) adalah bahasa markup yang digunakan untuk membuat struktur dari sebuah halaman website. Elemen-elemen HTML dapat digunakan untuk menampilkan berbagai jenis konten seperti teks, gambar, video, dan lainnya.</p>
+            <h3>Contoh Kode HTML</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Judul Halaman&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;Ini Header&lt;/header&gt;
+        &lt;nav&gt;Menu Navigasi&lt;/nav&gt;
+        &lt;main&gt;Konten Utama&lt;/main&gt;
+        &lt;footer&gt;Footer&lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section id="css-materi">
+            <h2>CSS: Styling dan Layout</h2>
+            <p>CSS (Cascading Style Sheets) adalah bahasa yang digunakan untuk mengatur tampilan atau styling dari elemen-elemen HTML. Dengan CSS, kita bisa menentukan warna, ukuran, margin, padding, posisi, dan berbagai aspek lainnya dari elemen HTML.</p>
+            <h3>Contoh Kode CSS</h3>
+            <pre><code>body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1 {
+    color: #4CAF50;
+}</code></pre>
+        </section>
+
+        <section id="flexbox">
+            <h2>Flexbox: Layout Fleksibel</h2>
+            <p>CSS Flexbox adalah metode layout modern yang digunakan untuk membuat layout yang lebih fleksibel dan responsif. Flexbox memungkinkan elemen untuk disusun secara horizontal atau vertikal, dan memungkinkan pengaturan alignment, distribusi ruang, serta ukuran elemen anak dengan mudah.</p>
+            <h3>Contoh Kode Flexbox</h3>
+            <pre><code>nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a {
+    padding: 0.5rem 1rem;
+}</code></pre>
+        </section>
+
+        <section id="grid">
+            <h2>CSS Grid: Layout yang Lebih Fleksibel</h2>
+            <p>CSS Grid adalah sistem layout dua dimensi yang memungkinkan kita membuat grid layout kompleks dengan sangat mudah. Grid memungkinkan kita untuk membuat struktur baris dan kolom, dan sangat cocok digunakan untuk desain layout utama dari sebuah halaman.</p>
+            <h3>Contoh Kode CSS Grid</h3>
+            <pre><code>body {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+}</code></pre>
+        </section>
+
+        <section id="responsif">
+            <h2>Desain Responsif: Layout untuk Semua Ukuran Layar</h2>
+            <p>Desain responsif adalah pendekatan untuk membuat website yang dapat beradaptasi dengan berbagai ukuran layar, dari perangkat mobile hingga desktop. Dengan media query, kita dapat mengubah layout dan styling berdasarkan ukuran layar.</p>
+            <h3>Contoh Media Query</h3>
+            <pre><code>@media (min-width: 768px) {
+    body {
+        grid-template-columns: 3fr 1fr;
+    }
+}</code></pre>
+        </section>
+    </main>
+
+    <!-- Sidebar -->
+    <aside>
+        <h3>Tips & Trik</h3>
+        <p>Gunakan Flexbox untuk elemen kecil seperti navigasi, dan gunakan CSS Grid untuk layout halaman utama.</p>
+        <p>Pastikan untuk menambahkan media queries agar tampilan tetap responsif di berbagai perangkat.</p>
+    </aside>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Belajar HTML & CSS Modern</p>
+    </footer>
+
+</body>
+</html>

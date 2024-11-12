@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, CSS, & JS Learning Levels</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 2rem;
+        }
+        .level-section {
+            background: #fff;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .level-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .level-header:hover {
+            color: #007BFF;
+        }
+        .level-content {
+            display: none;
+            padding: 1rem;
+            font-size: 0.95rem;
+        }
+        .btn-copy {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+
+        /* level 15 */
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3498db;
+            padding: 10px 20px;
+            color: white;
+            position: relative;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar-item {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar-item:hover {
+            background-color: #2980b9;
+        }
+
+        .navbar-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #27ae60;
+        }
+
+        /* Media Query untuk Mobile View */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #3498db;
+                padding: 10px 0;
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+        }
+
+
+        /*  level 16  */
+
+
+        /* CSS untuk Carousel */
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Tombol Navigasi */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Titik Navigasi */
+        .dots {
+            text-align: center;
+            padding: 10px;
+            background: #ddd;
+        }
+
+        .dot {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+        /* Level 17 */
+
+        .level-section {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .level-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #3498db;
+        }
+
+        .level-content {
+            margin-top: 15px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9em;
+            display: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-copy {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-copy:hover {
+            background-color: #2980b9;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        /* level 18 */
+        .level-section {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .level-header {
+            font-size: 1.6rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #3498db;
+        }
+
+        .level-content {
+            margin-top: 15px;
+            display: none;
+        }
+
+        .btn-copy {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-copy:hover {
+            background-color: #2980b9;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .responsive-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .responsive-section img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        @media (min-width: 600px) {
+            .responsive-section {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+
+        /* level 18 Navigasi */
+
+         
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Struktur Pembelajaran HTML, CSS, & JS</h1>
+    <p>Mulai dari dasar hingga mahir, dari Level 1 hingga Level 18</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="level15.html">Level 15</a></li>
+        <li><a href="struktur.html">Materi Lanjutan</a></li>
+        <li><a href="materi.html">Struktur Dasar</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <!-- Template for each level section -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level1')">
+            Level 1: Pengenalan HTML
+        </div>
+        <div id="level1" class="level-content">
+            <p>Dasar-dasar HTML, struktur dokumen HTML, tag utama seperti <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, heading, paragraf, dan elemen teks lainnya.</p>
+            <button class="btn-copy" onclick="copyCode('level1-code')">Salin Kode</button>
+            <pre id="level1-code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Pengenalan HTML&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Selamat Datang di HTML&lt;/h1&gt;
+    &lt;p&gt;Ini adalah paragraf pertama Anda.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </div>
+    </div>
+
+    <!-- Tambahkan Level lainnya dengan struktur yang sama -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level2')">
+            Level 2: Teks dan Format Dasar HTML
+        </div>
+        <div id="level2" class="level-content">
+            <p>Tag pemformatan seperti <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>, dan penggunaan tautan dengan <code>&lt;a&gt;</code>.</p>
+            <button class="btn-copy" onclick="copyCode('level2-code')">Salin Kode</button>
+            <pre id="level2-code">
+&lt;p&gt;&lt;b&gt;Bold&lt;/b&gt; teks dan &lt;i&gt;Italic&lt;/i&gt; teks&lt;/p&gt;
+&lt;a href="https://example.com"&gt;Kunjungi Example&lt;/a&gt;
+            </pre>
+        </div>
+    </div>
+
+    <!-- ... tambahkan level 3  -->
+
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level3')">
+            Level 3: Gambar, Daftar, dan Tabel di HTML
+        </div>
+        <div id="level3" class="level-content">
+            <p>Di level ini, kita akan mempelajari cara menambahkan gambar, membuat daftar, dan tabel di HTML.</p>
+            
+            <h3>Gambar</h3>
+            <p>Anda dapat menambahkan gambar ke halaman web menggunakan tag <code>&lt;img&gt;</code> dan atribut <code>src</code> serta <code>alt</code> untuk deskripsi gambar.</p>
+            <button class="btn-copy" onclick="copyCode('level3-image-code')">Salin Kode Gambar</button>
+            <pre id="level3-image-code">
+    &lt;img src="https://example.com/image.jpg" alt="Contoh Gambar" width="300" height="200"&gt;
+            </pre>
+    
+            <h3>Daftar</h3>
+            <p>Ada dua jenis daftar di HTML: daftar bernomor (ordered) dan daftar tak bernomor (unordered).</p>
+            <button class="btn-copy" onclick="copyCode('level3-list-code')">Salin Kode Daftar</button>
+            <pre id="level3-list-code">
+    &lt;!-- Daftar Tak Bernomor --&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Item 1&lt;/li&gt;
+      &lt;li&gt;Item 2&lt;/li&gt;
+      &lt;li&gt;Item 3&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;!-- Daftar Bernomor --&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Item A&lt;/li&gt;
+      &lt;li&gt;Item B&lt;/li&gt;
+      &lt;li&gt;Item C&lt;/li&gt;
+    &lt;/ol&gt;
+            </pre>
+    
+            <h3>Tabel</h3>
+            <p>Tabel di HTML dibuat menggunakan tag <code>&lt;table&gt;</code> dengan baris <code>&lt;tr&gt;</code> dan sel <code>&lt;td&gt;</code>. Header tabel menggunakan tag <code>&lt;th&gt;</code>.</p>
+            <button class="btn-copy" onclick="copyCode('level3-table-code')">Salin Kode Tabel</button>
+            <pre id="level3-table-code">
+    &lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Nama&lt;/th&gt;
+        &lt;th&gt;Usia&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Ali&lt;/td&gt;
+        &lt;td&gt;20&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Budi&lt;/td&gt;
+        &lt;td&gt;22&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+            </pre>
+        </div>
+    </div>
+
+    <!-- ... tambahkan level 4 -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level4')">
+            Level 4: Formulir Dasar HTML
+        </div>
+        <div id="level4" class="level-content">
+            <p>Pada level ini, kita akan belajar membuat form sederhana di HTML. Formulir digunakan untuk menerima input dari pengguna, seperti nama, email, pilihan, dan lainnya.</p>
+            
+            <h3>Contoh Formulir Sederhana</h3>
+            <p>Formulir dasar di HTML dibuat menggunakan tag <code>&lt;form&gt;</code> dan berisi elemen-elemen seperti <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>, dan <code>&lt;button&gt;</code>.</p>
+            
+            <button class="btn-copy" onclick="copyCode('level4-form-code')">Salin Kode Formulir</button>
+            <pre id="level4-form-code">
+    &lt;form action="/submit" method="post"&gt;
+      &lt;label for="name"&gt;Nama:&lt;/label&gt;
+      &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
+    
+      &lt;label for="email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;
+    
+      &lt;p&gt;Jenis Kelamin:&lt;/p&gt;
+      &lt;input type="radio" id="male" name="gender" value="male"&gt;
+      &lt;label for="male"&gt;Laki-laki&lt;/label&gt;&lt;br&gt;
+      &lt;input type="radio" id="female" name="gender" value="female"&gt;
+      &lt;label for="female"&gt;Perempuan&lt;/label&gt;&lt;br&gt;
+    
+      &lt;p&gt;Hobi:&lt;/p&gt;
+      &lt;input type="checkbox" id="reading" name="hobby" value="reading"&gt;
+      &lt;label for="reading"&gt;Membaca&lt;/label&gt;&lt;br&gt;
+      &lt;input type="checkbox" id="sports" name="hobby" value="sports"&gt;
+      &lt;label for="sports"&gt;Olahraga&lt;/label&gt;&lt;br&gt;
+    
+      &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+    &lt;/form&gt;
+            </pre>
+    
+            <h3>Penjelasan Formulir</h3>
+            <ul>
+                <li><code>&lt;input type="text"&gt;</code>: Input teks untuk menerima nama atau informasi lainnya.</li>
+                <li><code>&lt;input type="email"&gt;</code>: Input email dengan validasi email dasar.</li>
+                <li><code>&lt;input type="radio"&gt;</code>: Radio button untuk pilihan tunggal (misalnya, jenis kelamin).</li>
+                <li><code>&lt;input type="checkbox"&gt;</code>: Checkbox untuk pilihan ganda (misalnya, hobi).</li>
+                <li><code>&lt;button type="submit"&gt;</code>: Tombol untuk mengirim data formulir.</li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <!-- ... tambahkan level 5 -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level5')">
+            Level 5: HTML Multimedia (Gambar, Audio, dan Video)
+        </div>
+        <div id="level5" class="level-content">
+            <p>Pada level ini, kita akan belajar cara menambahkan gambar, audio, dan video di HTML. Multimedia dapat membantu memperkaya konten website dan membuatnya lebih menarik bagi pengguna.</p>
+            
+            <h3>1. Menyematkan Gambar</h3>
+            <p>Gambar ditambahkan menggunakan elemen <code>&lt;img&gt;</code>.</p>
+            
+            <button class="btn-copy" onclick="copyCode('level5-img-code')">Salin Kode Gambar</button>
+            <pre id="level5-img-code">
+    &lt;!-- Contoh Menyematkan Gambar --&gt;
+    &lt;img src="https://www.example.com/gambar.jpg" alt="Deskripsi Gambar" width="300"&gt;
+            </pre>
+    
+            <h3>2. Menyematkan Audio</h3>
+            <p>Audio dapat ditambahkan menggunakan elemen <code>&lt;audio&gt;</code>. Pastikan audio dalam format yang didukung seperti MP3.</p>
+            
+            <button class="btn-copy" onclick="copyCode('level5-audio-code')">Salin Kode Audio</button>
+            <pre id="level5-audio-code">
+    &lt;!-- Contoh Menyematkan Audio --&gt;
+    &lt;audio controls&gt;
+      &lt;source src="https://www.example.com/audio.mp3" type="audio/mpeg"&gt;
+      Browser Anda tidak mendukung elemen audio.
+    &lt;/audio&gt;
+            </pre>
+    
+            <h3>3. Menyematkan Video</h3>
+            <p>Video dapat ditambahkan menggunakan elemen <code>&lt;video&gt;</code> dengan kontrol pemutaran.</p>
+            
+            <button class="btn-copy" onclick="copyCode('level5-video-code')">Salin Kode Video</button>
+            <pre id="level5-video-code">
+    &lt;!-- Contoh Menyematkan Video --&gt;
+    &lt;video width="320" height="240" controls&gt;
+      &lt;source src="https://www.example.com/video.mp4" type="video/mp4"&gt;
+      Browser Anda tidak mendukung elemen video.
+    &lt;/video&gt;
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>&lt;img&gt;</code>: Menyematkan gambar dengan atribut <code>src</code> untuk tautan gambar dan <code>alt</code> untuk deskripsi alternatif.</li>
+                <li><code>&lt;audio&gt;</code>: Menambahkan file audio dengan kontrol pemutaran, menggunakan <code>controls</code> untuk menampilkan tombol play/pause.</li>
+                <li><code>&lt;video&gt;</code>: Menyematkan video dengan kontrol pemutaran, ukuran lebar, dan tinggi.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- ... tambahkan level 6 -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level6')">
+            Level 6: HTML Forms (Formulir untuk Mengumpulkan Data)
+        </div>
+        <div id="level6" class="level-content">
+            <p>Pada level ini, kita akan belajar cara membuat formulir di HTML untuk mengumpulkan data dari pengguna. Formulir sering digunakan untuk mendapatkan masukan pengguna seperti nama, email, dan pesan.</p>
+    
+            <h3>1. Membuat Formulir Dasar</h3>
+            <p>Formulir di HTML menggunakan elemen <code>&lt;form&gt;</code> dengan berbagai elemen input di dalamnya, seperti teks, email, tombol, dan sebagainya.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level6-form-code')">Salin Kode Formulir</button>
+            <pre id="level6-form-code">
+    &lt;!-- Contoh Formulir Dasar --&gt;
+    &lt;form action="/submit_form" method="post"&gt;
+      &lt;label for="name"&gt;Nama:&lt;/label&gt;
+      &lt;input type="text" id="name" name="name" required&gt;
+      
+      &lt;label for="email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="email" name="email" required&gt;
+    
+      &lt;label for="message"&gt;Pesan:&lt;/label&gt;
+      &lt;textarea id="message" name="message" rows="4" required&gt;&lt;/textarea&gt;
+    
+      &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+    &lt;/form&gt;
+            </pre>
+    
+            <h3>2. Elemen dalam Formulir</h3>
+            <ul>
+                <li><code>&lt;form&gt;</code>: Elemen utama untuk membuat formulir. Atribut <code>action</code> menentukan tujuan data dan <code>method</code> menentukan jenis permintaan (GET atau POST).</li>
+                <li><code>&lt;label&gt;</code>: Memberi label pada elemen input untuk memudahkan pengguna.</li>
+                <li><code>&lt;input type="text"&gt;</code>: Bidang input teks yang biasanya digunakan untuk nama atau informasi singkat.</li>
+                <li><code>&lt;input type="email"&gt;</code>: Bidang input untuk email dengan validasi otomatis format email.</li>
+                <li><code>&lt;textarea&gt;</code>: Elemen input teks untuk pesan atau teks yang lebih panjang.</li>
+                <li><code>&lt;button type="submit"&gt;</code>: Tombol untuk mengirimkan data dari formulir ke server.</li>
+            </ul>
+    
+            <h3>3. Formulir dengan Validasi</h3>
+            <p>Dengan atribut <code>required</code> pada elemen input, kita dapat menambahkan validasi dasar agar pengguna mengisi formulir sebelum mengirim.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level6-form-validation-code')">Salin Kode Formulir dengan Validasi</button>
+            <pre id="level6-form-validation-code">
+    &lt;!-- Formulir dengan Validasi Dasar --&gt;
+    &lt;form action="/submit_form" method="post"&gt;
+      &lt;label for="username"&gt;Username:&lt;/label&gt;
+      &lt;input type="text" id="username" name="username" required minlength="3" maxlength="15"&gt;
+      
+      &lt;label for="password"&gt;Password:&lt;/label&gt;
+      &lt;input type="password" id="password" name="password" required minlength="8"&gt;
+    
+      &lt;button type="submit"&gt;Login&lt;/button&gt;
+    &lt;/form&gt;
+            </pre>
+            
+            <h3>Penjelasan</h3>
+            <ul>
+                <li>Atribut <code>required</code>: Memastikan input diisi sebelum formulir dikirim.</li>
+                <li>Atribut <code>minlength</code> dan <code>maxlength</code>: Menentukan panjang minimal dan maksimal input.</li>
+                <li>Atribut <code>type="password"</code>: Menyembunyikan teks yang dimasukkan untuk keamanan.</li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <!-- ... tambahkan level 7-->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level7')">
+            Level 7: HTML Tables (Membuat Tabel)
+        </div>
+        <div id="level7" class="level-content">
+            <p>Pada level ini, kita akan belajar cara membuat tabel di HTML untuk menampilkan data dalam baris dan kolom. Tabel sangat berguna untuk mengatur informasi yang kompleks dan terstruktur.</p>
+    
+            <h3>1. Membuat Tabel Dasar</h3>
+            <p>Tabel di HTML dibuat dengan elemen <code>&lt;table&gt;</code>. Setiap baris data menggunakan elemen <code>&lt;tr&gt;</code>, sementara setiap kolom di dalam baris menggunakan elemen <code>&lt;td&gt;</code>.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level7-basic-table')">Salin Kode Tabel Dasar</button>
+            <pre id="level7-basic-table">
+    &lt;!-- Contoh Tabel Dasar --&gt;
+    &lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Nama&lt;/th&gt;
+        &lt;th&gt;Umur&lt;/th&gt;
+        &lt;th&gt;Kelas&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Andi&lt;/td&gt;
+        &lt;td&gt;12&lt;/td&gt;
+        &lt;td&gt;7A&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Budi&lt;/td&gt;
+        &lt;td&gt;13&lt;/td&gt;
+        &lt;td&gt;8B&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+            </pre>
+    
+            <h3>2. Struktur Elemen dalam Tabel</h3>
+            <ul>
+                <li><code>&lt;table&gt;</code>: Elemen utama yang membungkus seluruh tabel.</li>
+                <li><code>&lt;tr&gt;</code>: Mewakili satu baris di tabel.</li>
+                <li><code>&lt;th&gt;</code>: Elemen untuk sel header (judul kolom), biasanya muncul di baris pertama tabel.</li>
+                <li><code>&lt;td&gt;</code>: Elemen untuk sel data di dalam tabel.</li>
+            </ul>
+    
+            <h3>3. Tabel dengan Penggabungan Sel</h3>
+            <p>Kita bisa menggabungkan beberapa kolom atau baris menggunakan atribut <code>colspan</code> dan <code>rowspan</code>.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level7-span-table')">Salin Kode Tabel dengan Penggabungan Sel</button>
+            <pre id="level7-span-table">
+    &lt;!-- Tabel dengan Penggabungan Sel --&gt;
+    &lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Nama&lt;/th&gt;
+        &lt;th&gt;Informasi&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Exchel David Flory&lt;/td&gt;
+        &lt;td&gt;Umur: 12&lt;br&gt; Kelas: 7A&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Budi&lt;/td&gt;
+        &lt;td&gt;Umur: 13&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Kelas: 8B&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li>Atribut <code>border="1"</code>: Memberikan garis pembatas pada tabel agar terlihat lebih jelas.</li>
+                <li><code>colspan</code>: Menggabungkan beberapa kolom menjadi satu sel.</li>
+                <li><code>rowspan</code>: Menggabungkan beberapa baris menjadi satu sel.</li>
+            </ul>
+        </div>
+    </div>
+     <!-- ... tambahkan level 8 -->
+     <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level8')">
+            Level 8: HTML Forms (Membuat Formulir)
+        </div>
+        <div id="level8" class="level-content">
+            <p>Di level ini, kita akan belajar membuat berbagai elemen formulir, termasuk kotak teks, area teks, tombol radio, kotak centang, dan tombol kirim.</p>
+    
+            <h3>1. Struktur Formulir Dasar</h3>
+            <p>Formulir di HTML dibuat dengan elemen <code>&lt;form&gt;</code>. Di dalamnya, kita bisa menambahkan berbagai elemen untuk menerima input pengguna.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level8-basic-form')">Salin Kode Formulir Dasar</button>
+            <pre id="level8-basic-form">
+    &lt;!-- Contoh Formulir Dasar --&gt;
+    &lt;form action="submit.php" method="post"&gt;
+      &lt;label for="nama"&gt;Nama:&lt;/label&gt;
+      &lt;input type="text" id="nama" name="nama"&gt;
+    
+      &lt;label for="email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="email" name="email"&gt;
+    
+      &lt;label for="komentar"&gt;Komentar:&lt;/label&gt;
+      &lt;textarea id="komentar" name="komentar"&gt;&lt;/textarea&gt;
+    
+      &lt;input type="submit" value="Kirim"&gt;
+    &lt;/form&gt;
+            </pre>
+    
+            <h3>2. Elemen Formulir Lainnya</h3>
+            <p>Kita bisa menambahkan tombol radio, kotak centang, dan elemen dropdown ke dalam formulir.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level8-advanced-form')">Salin Kode Formulir Lanjutan</button>
+            <pre id="level8-advanced-form">
+    &lt;!-- Formulir dengan Elemen Tambahan --&gt;
+    &lt;form action="submit.php" method="post"&gt;
+      &lt;p&gt;Jenis Kelamin:&lt;/p&gt;
+      &lt;input type="radio" id="laki-laki" name="gender" value="Laki-laki"&gt;
+      &lt;label for="laki-laki"&gt;Laki-laki&lt;/label&gt;
+      &lt;input type="radio" id="perempuan" name="gender" value="Perempuan"&gt;
+      &lt;label for="perempuan"&gt;Perempuan&lt;/label&gt;
+    
+      &lt;p&gt;Hobi:&lt;/p&gt;
+      &lt;input type="checkbox" id="membaca" name="hobi" value="Membaca"&gt;
+      &lt;label for="membaca"&gt;Membaca&lt;/label&gt;
+      &lt;input type="checkbox" id="olahraga" name="hobi" value="Olahraga"&gt;
+      &lt;label for="olahraga"&gt;Olahraga&lt;/label&gt;
+    
+      &lt;label for="kota"&gt;Pilih Kota:&lt;/label&gt;
+      &lt;select id="kota" name="kota"&gt;
+        &lt;option value="Jakarta"&gt;Jakarta&lt;/option&gt;
+        &lt;option value="Bandung"&gt;Bandung&lt;/option&gt;
+        &lt;option value="Surabaya"&gt;Surabaya&lt;/option&gt;
+      &lt;/select&gt;
+    
+      &lt;input type="submit" value="Kirim"&gt;
+    &lt;/form&gt;
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>&lt;input type="text"&gt;</code>: Kotak teks untuk menerima input teks pendek.</li>
+                <li><code>&lt;input type="email"&gt;</code>: Kotak teks untuk menerima input email.</li>
+                <li><code>&lt;textarea&gt;</code>: Area teks untuk menerima input teks panjang.</li>
+                <li><code>&lt;input type="radio"&gt;</code>: Tombol radio untuk memilih satu dari beberapa opsi.</li>
+                <li><code>&lt;input type="checkbox"&gt;</code>: Kotak centang untuk memilih beberapa opsi.</li>
+                <li><code>&lt;select&gt;</code> dan <code>&lt;option&gt;</code>: Dropdown untuk memilih satu dari beberapa pilihan.</li>
+            </ul>
+        </div>
+    </div>
+    
+     <!-- ... tambahkan level 9 -->
+     <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level9')">
+            Level 9: CSS Grid Layout (Pengaturan Layout Modern)
+        </div>
+        <div id="level9" class="level-content">
+            <p>Di level ini, kita akan belajar membuat layout halaman menggunakan <code>CSS Grid</code>. CSS Grid adalah cara yang sangat fleksibel dan modern untuk mengatur elemen dalam bentuk grid, baik dalam baris maupun kolom.</p>
+    
+            <h3>1. Membuat Layout Grid Dasar</h3>
+            <p>CSS Grid bekerja dengan mengubah elemen kontainer menjadi grid, lalu membagi isinya dalam baris dan kolom sesuai dengan yang kita inginkan.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level9-basic-grid')">Salin Kode Layout Grid Dasar</button>
+            <pre id="level9-basic-grid">
+    &lt;!-- HTML Struktur Grid Dasar --&gt;
+    &lt;div class="grid-container"&gt;
+        &lt;div class="grid-item"&gt;Item 1&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 2&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 3&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 4&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 5&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 6&lt;/div&gt;
+    &lt;/div&gt;
+            </pre>
+    
+            <h3>2. CSS untuk Mengatur Layout Grid</h3>
+            <button class="btn-copy" onclick="copyCode('level9-basic-css')">Salin Kode CSS untuk Grid</button>
+            <pre id="level9-basic-css">
+    /* CSS untuk Mengatur Layout Grid Dasar */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom dengan lebar sama */
+        gap: 10px; /* jarak antar item */
+    }
+    
+    .grid-item {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>display: grid;</code>: Mengatur elemen menjadi grid container.</li>
+                <li><code>grid-template-columns: repeat(3, 1fr);</code>: Membuat tiga kolom dengan lebar sama.</li>
+                <li><code>gap: 10px;</code>: Menambahkan jarak antar item grid.</li>
+            </ul>
+    
+            <h3>3. Mengatur Layout Grid yang Responsif</h3>
+            <p>Kita bisa menggunakan media queries agar layout grid berubah sesuai ukuran layar.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level9-responsive-css')">Salin Kode CSS Responsif</button>
+            <pre id="level9-responsive-css">
+    /* CSS untuk Grid Responsif */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    @media (max-width: 768px) {
+        .grid-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar sedang */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .grid-container {
+            grid-template-columns: 1fr; /* 1 kolom pada layar kecil */
+        }
+    }
+            </pre>
+    
+            <h3>Penjelasan Tambahan</h3>
+            <ul>
+                <li><code>@media</code>: Mengatur tata letak berbeda berdasarkan lebar layar.</li>
+                <li><code>grid-template-columns: repeat(2, 1fr);</code>: Mengatur layout menjadi dua kolom di layar sedang.</li>
+                <li><code>grid-template-columns: 1fr;</code>: Mengatur layout menjadi satu kolom di layar kecil.</li>
+            </ul>
+        </div>
+    </div>
+    
+     <!-- ... tambahkan level 10 -->
+     <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level10')">
+            Level 10: Animasi dan Transisi CSS (Membuat Interaksi Halus dan Menarik)
+        </div>
+        <div id="level10" class="level-content">
+            <p>Di level ini, kita akan mempelajari cara membuat transisi dan animasi pada elemen web menggunakan CSS untuk membuat tampilan lebih menarik dan interaktif.</p>
+    
+            <h3>1. Contoh Transisi CSS</h3>
+            <p>Kita bisa menambahkan transisi untuk membuat perubahan warna atau ukuran elemen menjadi lebih halus saat di-hover.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level10-transition')">Salin Kode Transisi CSS</button>
+            <pre id="level10-transition">
+    &lt;!-- HTML untuk Transisi CSS --&gt;
+    &lt;div class="box"&gt;Hover me!&lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level10-transition-css')">Salin Kode CSS untuk Transisi</button>
+            <pre id="level10-transition-css">
+    /* CSS untuk Transisi */
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .box:hover {
+        background-color: #2ecc71;
+        transform: scale(1.1); /* Memperbesar saat di-hover */
+    }
+            </pre>
+    
+            <h3>2. Contoh Animasi CSS</h3>
+            <p>Animasi bisa membuat elemen bergerak, berubah ukuran, atau efek lainnya secara otomatis.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level10-animation')">Salin Kode Animasi CSS</button>
+            <pre id="level10-animation">
+    &lt;!-- HTML untuk Animasi CSS --&gt;
+    &lt;div class="animated-box"&gt;I'm animated!&lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level10-animation-css')">Salin Kode CSS untuk Animasi</button>
+            <pre id="level10-animation-css">
+    /* CSS untuk Animasi */
+    .animated-box {
+        width: 100px;
+        height: 100px;
+        background-color: #e74c3c;
+        animation: bounce 1s infinite;
+    }
+    
+    /* Keyframes untuk animasi bounce */
+    @keyframes bounce {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0); }
+    }
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>transition</code>: Menentukan durasi dan jenis transisi (misalnya, perubahan warna atau ukuran saat hover).</li>
+                <li><code>animation</code>: Menambahkan animasi ke elemen, seperti efek "bounce" pada contoh.</li>
+                <li><code>@keyframes</code>: Mendefinisikan langkah-langkah animasi, dari mulai hingga akhir.</li>
+            </ul>
+        </div>
+    </div>
+    
+     <!-- ... tambahkan level 11 -->
+     <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level11')">
+            Level 11: Flexbox dan Grid Layout (Desain Responsif yang Fleksibel)
+        </div>
+        <div id="level11" class="level-content">
+            <p>Di level ini, kita akan belajar tentang Flexbox dan Grid Layout, dua teknik CSS yang sangat berguna untuk membuat layout responsif dan fleksibel.</p>
+    
+            <h3>1. Contoh Flexbox Layout</h3>
+            <p>Flexbox memungkinkan kita mengatur elemen-elemen secara fleksibel dalam satu dimensi, baik secara horizontal maupun vertikal.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level11-flexbox')">Salin Kode Flexbox</button>
+            <pre id="level11-flexbox">
+    &lt;!-- HTML untuk Flexbox --&gt;
+    &lt;div class="flex-container"&gt;
+        &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
+        &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
+        &lt;div class="flex-item"&gt;Item 3&lt;/div&gt;
+    &lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level11-flexbox-css')">Salin Kode CSS Flexbox</button>
+            <pre id="level11-flexbox-css">
+    /* CSS untuk Flexbox */
+    .flex-container {
+        display: flex;
+        justify-content: space-between; /* Menyebar item dengan jarak yang sama */
+        align-items: center; /* Mengatur item di tengah secara vertikal */
+    }
+    
+    .flex-item {
+        width: 30%;
+        background-color: #3498db;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+            </pre>
+    
+            <h3>2. Contoh Grid Layout</h3>
+            <p>Grid Layout memungkinkan kita membuat layout dua dimensi dengan kontrol penuh terhadap kolom dan baris.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level11-grid')">Salin Kode Grid</button>
+            <pre id="level11-grid">
+    &lt;!-- HTML untuk Grid Layout --&gt;
+    &lt;div class="grid-container"&gt;
+        &lt;div class="grid-item"&gt;Item 1&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 2&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 3&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 4&lt;/div&gt;
+    &lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level11-grid-css')">Salin Kode CSS Grid</button>
+            <pre id="level11-grid-css">
+    /* CSS untuk Grid Layout */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Membuat dua kolom */
+        gap: 20px; /* Jarak antar elemen */
+    }
+    
+    .grid-item {
+        background-color: #e74c3c;
+        padding: 20px;
+        text-align: center;
+        color: white;
+    }
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>display: flex</code>: Mengaktifkan flexbox pada kontainer.</li>
+                <li><code>justify-content</code>: Mengatur perataan horizontal item di dalam kontainer.</li>
+                <li><code>align-items</code>: Mengatur perataan vertikal item di dalam kontainer.</li>
+                <li><code>grid-template-columns</code>: Menentukan jumlah kolom pada grid.</li>
+                <li><code>gap</code>: Menentukan jarak antar elemen dalam grid.</li>
+            </ul>
+        </div>
+    </div>
+    
+     <!-- ... tambahkan level 12 -->
+     <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level12')">
+            Level 12: Animasi CSS dan Transisi (Efek Visual yang Interaktif)
+        </div>
+        <div id="level12" class="level-content">
+            <p>Di level ini, kita akan mempelajari animasi CSS dan transisi. Ini adalah cara untuk menambahkan efek visual yang menarik ke elemen-elemen di halaman web.</p>
+    
+            <h3>1. Contoh Transisi CSS</h3>
+            <p>Transisi memungkinkan kita untuk membuat perubahan halus pada properti elemen seperti warna, ukuran, atau posisi.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level12-transition')">Salin Kode Transisi</button>
+            <pre id="level12-transition">
+    &lt;!-- HTML untuk Transisi CSS --&gt;
+    &lt;div class="transition-box"&gt;Hover me!&lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level12-transition-css')">Salin Kode CSS Transisi</button>
+            <pre id="level12-transition-css">
+    /* CSS untuk Transisi */
+    .transition-box {
+        width: 200px;
+        height: 200px;
+        background-color: #3498db;
+        color: white;
+        text-align: center;
+        line-height: 200px;
+        transition: background-color 0.5s ease, transform 0.3s ease;
+    }
+    
+    .transition-box:hover {
+        background-color: #e74c3c;
+        transform: scale(1.2);
+    }
+            </pre>
+    
+            <h3>2. Contoh Animasi CSS</h3>
+            <p>Animasi CSS memungkinkan kita untuk membuat efek lebih kompleks seperti pergerakan elemen di sepanjang layar atau perubahan yang berulang.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level12-animation')">Salin Kode Animasi</button>
+            <pre id="level12-animation">
+    &lt;!-- HTML untuk Animasi CSS --&gt;
+    &lt;div class="animate-box"&gt;Animate Me!&lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level12-animation-css')">Salin Kode CSS Animasi</button>
+            <pre id="level12-animation-css">
+    /* CSS untuk Animasi */
+    @keyframes moveAnimation {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(200px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    
+    .animate-box {
+        width: 100px;
+        height: 100px;
+        background-color: #2ecc71;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        animation: moveAnimation 2s infinite;
+    }
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>transition</code>: Properti ini digunakan untuk menambahkan transisi halus pada elemen saat ada perubahan properti.</li>
+                <li><code>animation</code>: Digunakan untuk membuat animasi yang lebih kompleks dan dapat dikontrol dengan keyframes.</li>
+                <li><code>@keyframes</code>: Digunakan untuk mendefinisikan langkah-langkah dalam animasi, memberi kita kontrol penuh atas transformasi elemen di setiap titik waktu.</li>
+            </ul>
+        </div>
+    </div>
+    
+     <!-- ... tambahkan level 13 -->
+     <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level13')">
+            Level 13: Penggunaan Grid dan Flexbox untuk Layout CSS
+        </div>
+        <div id="level13" class="level-content">
+            <p>Di level ini, kita akan mempelajari dua teknik layout modern dalam CSS: Flexbox dan Grid. Teknik-teknik ini memungkinkan kita membuat website yang responsif dan rapi.</p>
+    
+            <h3>1. Contoh Flexbox</h3>
+            <p>Flexbox digunakan untuk mengatur elemen-elemen dalam baris atau kolom dengan mudah, mengatur ukuran dan jarak antar elemen secara otomatis.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level13-flexbox')">Salin Kode Flexbox</button>
+            <pre id="level13-flexbox">
+    &lt;!-- HTML untuk Flexbox --&gt;
+    &lt;div class="flex-container"&gt;
+        &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
+        &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
+        &lt;div class="flex-item"&gt;Item 3&lt;/div&gt;
+    &lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level13-flexbox-css')">Salin Kode CSS Flexbox</button>
+            <pre id="level13-flexbox-css">
+    /* CSS untuk Flexbox */
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+    
+    .flex-item {
+        background-color: #3498db;
+        color: white;
+        padding: 20px;
+        flex: 1;
+        text-align: center;
+    }
+            </pre>
+    
+            <h3>2. Contoh CSS Grid</h3>
+            <p>CSS Grid memungkinkan kita untuk membuat layout berbasis grid, di mana kita dapat menentukan jumlah kolom dan baris sesuai kebutuhan.</p>
+    
+            <button class="btn-copy" onclick="copyCode('level13-grid')">Salin Kode Grid</button>
+            <pre id="level13-grid">
+    &lt;!-- HTML untuk CSS Grid --&gt;
+    &lt;div class="grid-container"&gt;
+        &lt;div class="grid-item"&gt;Item 1&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 2&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 3&lt;/div&gt;
+        &lt;div class="grid-item"&gt;Item 4&lt;/div&gt;
+    &lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level13-grid-css')">Salin Kode CSS Grid</button>
+            <pre id="level13-grid-css">
+    /* CSS untuk CSS Grid */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+    
+    .grid-item {
+        background-color: #e74c3c;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>display: flex;</code>: Mengaktifkan Flexbox pada elemen container.</li>
+                <li><code>justify-content</code>: Digunakan untuk mengatur perataan item dalam arah horizontal.</li>
+                <li><code>align-items</code>: Digunakan untuk mengatur perataan item dalam arah vertikal.</li>
+                <li><code>display: grid;</code>: Mengaktifkan Grid Layout pada elemen container.</li>
+                <li><code>grid-template-columns</code>: Menentukan jumlah kolom di grid.</li>
+                <li><code>gap</code>: Menentukan jarak antar elemen di dalam container Flexbox atau Grid.</li>
+            </ul>
+        </div>
+    </div>
+    
+     <!-- ... tambahkan level 14 -->
+     <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level14')">
+            Level 14: Membuat Image Slider dengan HTML, CSS, dan JavaScript
+        </div>
+        <div id="level14" class="level-content">
+            <p>Pada level ini, kita akan membuat image slider sederhana menggunakan HTML, CSS, dan JavaScript. Slider ini memungkinkan pengguna untuk melihat beberapa gambar dalam satu frame dan mengklik panah untuk berpindah antara gambar.</p>
+    
+            <h3>Contoh Image Slider</h3>
+            <div class="slider-container">
+                <div class="slides active-slide">
+                    <img src="https://via.placeholder.com/600x300/3498db/FFFFFF?text=Slide+1" class="slide-image" alt="Slide 1">
+                </div>
+                <div class="slides">
+                    <img src="https://via.placeholder.com/600x300/e74c3c/FFFFFF?text=Slide+2" class="slide-image" alt="Slide 2">
+                </div>
+                <div class="slides">
+                    <img src="https://via.placeholder.com/600x300/2ecc71/FFFFFF?text=Slide+3" class="slide-image" alt="Slide 3">
+                </div>
+    
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+    
+            <button class="btn-copy" onclick="copyCode('level14-html')">Salin Kode HTML Slider</button>
+            <pre id="level14-html">
+    &lt;!-- HTML untuk Image Slider --&gt;
+    &lt;div class="slider-container"&gt;
+        &lt;div class="slides active-slide"&gt;
+            &lt;img src="https://via.placeholder.com/600x300/3498db/FFFFFF?text=Slide+1" class="slide-image" alt="Slide 1"&gt;
+        &lt;/div&gt;
+        &lt;div class="slides"&gt;
+            &lt;img src="https://via.placeholder.com/600x300/e74c3c/FFFFFF?text=Slide+2" class="slide-image" alt="Slide 2"&gt;
+        &lt;/div&gt;
+        &lt;div class="slides"&gt;
+            &lt;img src="https://via.placeholder.com/600x300/2ecc71/FFFFFF?text=Slide+3" class="slide-image" alt="Slide 3"&gt;
+        &lt;/div&gt;
+        &lt;a class="prev" onclick="changeSlide(-1)"&gt;&#10094;&lt;/a&gt;
+        &lt;a class="next" onclick="changeSlide(1)"&gt;&#10095;&lt;/a&gt;
+    &lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level14-js')">Salin Kode JavaScript Slider</button>
+            <pre id="level14-js">
+    /* JavaScript untuk Image Slider */
+    let slideIndex = 0;
+    
+    function showSlides() {
+        const slides = document.getElementsByClassName("slides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex - 1].style.display = "block";  
+        setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
+    }
+    
+    function changeSlide(n) {
+        slideIndex += n;
+        showSlides();
+    }
+    
+    document.addEventListener("DOMContentLoaded", showSlides);
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>slideIndex</code>: Mengelola indeks slide saat ini yang sedang ditampilkan.</li>
+                <li><code>showSlides</code>: Menampilkan slide sesuai indeks, dengan perubahan otomatis setiap 3 detik.</li>
+                <li><code>changeSlide</code>: Fungsi untuk mengubah slide secara manual dengan menekan tombol panah.</li>
+            </ul>
+        </div>
+    </div>
+
+     <!-- ... tambahkan level 15 -->
+     <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level15')">
+            Level 15: Membuat Navbar Modern dan Responsif dengan HTML, CSS, dan JavaScript
+        </div>
+        <div id="level15" class="level-content">
+            <p>Di level ini, kita akan membuat navbar yang modern, responsif, dan mudah digunakan di berbagai perangkat. Navbar akan berubah tampilan sesuai lebar layar, dengan tombol toggle untuk mobile.</p>
+    
+            <h3>Contoh Navbar</h3>
+            <nav class="navbar">
+                <a href="#" class="navbar-brand">BrandName</a>
+                <div class="navbar-toggle" onclick="toggleMenu()">&#9776;</div>
+                <div class="navbar-menu" id="navbarMenu">
+                    <a href="#" class="navbar-item">Home</a>
+                    <a href="#" class="navbar-item">About</a>
+                    <a href="#" class="navbar-item">Services</a>
+                    <a href="#" class="navbar-item">Contact</a>
+                    <button class="btn">Sign Up</button>
+                </div>
+            </nav>
+    
+            <button class="btn-copy" onclick="copyCode('level15-html')">Salin Kode HTML Navbar</button>
+            <pre id="level15-html">
+    &lt;!-- HTML untuk Navbar --&gt;
+    &lt;nav class="navbar"&gt;
+        &lt;a href="#" class="navbar-brand"&gt;BrandName&lt;/a&gt;
+        &lt;div class="navbar-toggle" onclick="toggleMenu()"&gt;&#9776;&lt;/div&gt;
+        &lt;div class="navbar-menu" id="navbarMenu"&gt;
+            &lt;a href="#" class="navbar-item"&gt;Home&lt;/a&gt;
+            &lt;a href="#" class="navbar-item"&gt;About&lt;/a&gt;
+            &lt;a href="#" class="navbar-item"&gt;Services&lt;/a&gt;
+            &lt;a href="#" class="navbar-item"&gt;Contact&lt;/a&gt;
+            &lt;button class="btn"&gt;Sign Up&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level15-css')">Salin Kode CSS Navbar</button>
+            <pre id="level15-css">
+    /* CSS untuk Navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #3498db;
+        padding: 10px 20px;
+        color: white;
+    }
+    
+    .navbar-menu {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .navbar-item {
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+    }
+    
+    .navbar-toggle {
+        display: none;
+    }
+    
+    /* Responsif */
+    @media (max-width: 768px) {
+        .navbar-menu {
+            display: none;
+            flex-direction: column;
+        }
+        .navbar-menu.active {
+            display: flex;
+        }
+        .navbar-toggle {
+            display: block;
+        }
+    }
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level15-js')">Salin Kode JavaScript Navbar</button>
+            <pre id="level15-js">
+    /* JavaScript untuk Toggle Menu */
+    function toggleMenu() {
+        const navbarMenu = document.getElementById("navbarMenu");
+        navbarMenu.classList.toggle("active");
+    }
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>.navbar</code>: Container utama navbar dengan warna dan posisi item diatur menggunakan flex.</li>
+                <li><code>.navbar-toggle</code>: Tombol yang hanya muncul di perangkat mobile untuk membuka atau menutup menu.</li>
+                <li><code>@media (max-width: 768px)</code>: Media query yang mengubah tampilan navbar pada perangkat kecil.</li>
+                <li><code>toggleMenu()</code>: Fungsi JavaScript untuk menampilkan atau menyembunyikan menu saat layar kecil.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ... tambahkan level 16 -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level16')">
+            Level 16: Membuat Carousel/Slider Modern dengan HTML, CSS, dan JavaScript
+        </div>
+        <div id="level16" class="level-content">
+            <p>Pada level ini, kita akan membuat slider modern dengan navigasi tombol dan titik, yang juga responsif di perangkat mobile.</p>
+    
+            <div class="carousel-container">
+                <div class="carousel-slide" id="carouselSlide">
+                    <div class="carousel-item"><img src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1"></div>
+                    <div class="carousel-item"><img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2"></div>
+                    <div class="carousel-item"><img src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slide 3"></div>
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+    
+            <button class="btn-copy" onclick="copyCode('level16-html')">Salin Kode HTML Carousel</button>
+            <pre id="level16-html">
+    &lt;!-- HTML untuk Carousel --&gt;
+    &lt;div class="carousel-container"&gt;
+        &lt;div class="carousel-slide" id="carouselSlide"&gt;
+            &lt;div class="carousel-item"&gt;&lt;img src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1"&gt;&lt;/div&gt;
+            &lt;div class="carousel-item"&gt;&lt;img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2"&gt;&lt;/div&gt;
+            &lt;div class="carousel-item"&gt;&lt;img src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slide 3"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button class="carousel-button prev" onclick="moveSlide(-1)"&gt;&#10094;&lt;/button&gt;
+        &lt;button class="carousel-button next" onclick="moveSlide(1)"&gt;&#10095;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="dots"&gt;
+        &lt;span class="dot" onclick="currentSlide(1)"&gt;&lt;/span&gt; 
+        &lt;span class="dot" onclick="currentSlide(2)"&gt;&lt;/span&gt; 
+        &lt;span class="dot" onclick="currentSlide(3)"&gt;&lt;/span&gt; 
+    &lt;/div&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level16-js')">Salin Kode JavaScript Carousel</button>
+            <pre id="level16-js">
+    /* JavaScript untuk Carousel */
+    let currentIndex = 0;
+    const slides = document.getElementsByClassName("carousel-item");
+    const dots = document.getElementsByClassName("dot");
+    
+    function showSlide(index) {
+        if (index >= slides.length) currentIndex = 0;
+        if (index < 0) currentIndex = slides.length - 1;
+        
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+    
+        slides[currentIndex].style.display = "block";
+        dots[currentIndex].classList.add("active");
+    }
+    
+    function moveSlide(n) {
+        currentIndex += n;
+        showSlide(currentIndex);
+    }
+    
+    function currentSlide(n) {
+        currentIndex = n - 1;
+        showSlide(currentIndex);
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        showSlide(currentIndex);
+    });
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>carousel-slide</code>: Container utama yang menampung semua item carousel dalam satu baris.</li>
+                <li><code>prev</code> dan <code>next</code>: Tombol navigasi untuk berpindah slide.</li>
+                <li><code>dot</code>: Titik navigasi untuk menunjukkan slide aktif.</li>
+                <li><code>showSlide()</code>: Fungsi JavaScript untuk menampilkan slide tertentu.</li>
+                <li><code>moveSlide()</code> dan <code>currentSlide()</code>: Fungsi untuk mengubah slide melalui tombol dan titik navigasi.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- ... tambahkan level 17 -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level17')">
+            Level 17: Formulir Kontak Interaktif dengan Validasi
+        </div>
+        <div id="level17" class="level-content">
+            <p>Pada level ini, kita akan belajar membuat formulir kontak interaktif dengan validasi dasar menggunakan HTML, CSS, dan JavaScript. Formulir ini berguna untuk memastikan bahwa data yang dimasukkan oleh pengguna sudah benar sebelum dikirim.</p>
+    
+            <h3>Contoh Formulir Kontak</h3>
+            <div class="form-container">
+                <form id="contactForm" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="name">Nama:</label>
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama Anda">
+                        <span class="error-message" id="nameError">Nama harus diisi.</span>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
+                        <span class="error-message" id="emailError">Email tidak valid.</span>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="message">Pesan:</label>
+                        <textarea id="message" name="message" placeholder="Masukkan pesan Anda" rows="5"></textarea>
+                        <span class="error-message" id="messageError">Pesan harus diisi.</span>
+                    </div>
+    
+                    <button type="submit" class="btn-submit">Kirim Pesan</button>
+                </form>
+            </div>
+    
+            <button class="btn-copy" onclick="copyCode('level17-html')">Salin Kode HTML Formulir</button>
+            <pre id="level17-html">
+    &lt;!-- HTML untuk Formulir Kontak --&gt;
+    &lt;form id="contactForm" onsubmit="return validateForm()"&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label for="name"&gt;Nama:&lt;/label&gt;
+            &lt;input type="text" id="name" name="name" placeholder="Masukkan nama Anda"&gt;
+            &lt;span class="error-message" id="nameError"&gt;Nama harus diisi.&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label for="email"&gt;Email:&lt;/label&gt;
+            &lt;input type="email" id="email" name="email" placeholder="Masukkan email Anda"&gt;
+            &lt;span class="error-message" id="emailError"&gt;Email tidak valid.&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group"&gt;
+            &lt;label for="message"&gt;Pesan:&lt;/label&gt;
+            &lt;textarea id="message" name="message" placeholder="Masukkan pesan Anda" rows="5"&gt;&lt;/textarea&gt;
+            &lt;span class="error-message" id="messageError"&gt;Pesan harus diisi.&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;button type="submit" class="btn-submit"&gt;Kirim Pesan&lt;/button&gt;
+    &lt;/form&gt;
+            </pre>
+    
+            <button class="btn-copy" onclick="copyCode('level17-js')">Salin Kode JavaScript Validasi</button>
+            <pre id="level17-js">
+    /* JavaScript untuk Validasi Formulir */
+    function validateForm() {
+        let valid = true;
+    
+        // Validasi Nama
+        const name = document.getElementById("name").value;
+        if (name.trim() === "") {
+            document.getElementById("nameError").style.display = "block";
+            valid = false;
+        } else {
+            document.getElementById("nameError").style.display = "none";
+        }
+    
+        // Validasi Email
+        const email = document.getElementById("email").value;
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById("emailError").style.display = "block";
+            valid = false;
+        } else {
+            document.getElementById("emailError").style.display = "none";
+        }
+    
+        // Validasi Pesan
+        const message = document.getElementById("message").value;
+        if (message.trim() === "") {
+            document.getElementById("messageError").style.display = "block";
+            valid = false;
+        } else {
+            document.getElementById("messageError").style.display = "none";
+        }
+    
+        return valid;
+    }
+            </pre>
+    
+            <h3>Penjelasan</h3>
+            <ul>
+                <li><code>validateForm</code>: Fungsi JavaScript yang memeriksa apakah setiap bidang telah diisi dan valid sebelum data dikirim.</li>
+                <li><code>error-message</code>: Pesan kesalahan yang ditampilkan saat input tidak valid.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- ... tambahkan level 18 -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level18')">
+            Level 18: Membuat Section Responsif dengan CSS
+        </div>
+        <div id="level18" class="level-content">
+            <p>Pada level ini, kita akan belajar membuat section yang responsif menggunakan CSS. Section ini dirancang untuk beradaptasi dengan lebar layar yang berbeda, membuat tampilan tetap estetis di berbagai perangkat.</p>
+    
+            <h3>Contoh Section Responsif</h3>
+            <div class="responsive-section">
+                <img src="https://via.placeholder.com/400x200/3498db/FFFFFF?text=Gambar+1" alt="Gambar Responsif">
+                <p>
+                    Ini adalah contoh section yang responsif. Pada layar kecil, gambar dan teks ditampilkan dalam satu kolom. Namun, pada layar lebih lebar, konten akan ditampilkan berdampingan.
+                </p>
+            </div>
+    
+            <button class="btn-copy" onclick="copyCode('level18-html')">Salin Kode HTML & CSS</button>
+            <pre id="level18-html">
+    &lt;!-- HTML untuk Section Responsif --&gt;
+    &lt;div class="responsive-section"&gt;
+        &lt;img src="https://via.placeholder.com/400x200/3498db/FFFFFF?text=Gambar+Responsif" alt="Gambar Responsif"&gt;
+        &lt;p&gt;Ini adalah contoh section yang responsif. Pada layar kecil, gambar dan teks ditampilkan dalam satu kolom. Namun, pada layar lebih lebar, konten akan ditampilkan berdampingan.&lt;/p&gt;
+    &lt;/div&gt;
+    
+    /* CSS untuk Section Responsif */
+    .responsive-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+    }
+    
+    .responsive-section img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 8px;
+    }
+    
+    @media (min-width: 600px) {
+        .responsive-section {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    
+        .responsive-section img {
+            max-width: 45%;
+        }
+    }
+           
+</pre>
+            <h3>Penjelasan JavaScript</h3>
+            <p>JavaScript sederhana ini berfungsi untuk membuka dan menutup konten section dengan mengklik judulnya.</p>
+            <button class="btn-copy" onclick="copyCode('level18-js')">Salin Kode JavaScript Buka Dan Tutup</button>
+            <pre id="level18-js">
+    /* JavaScript untuk Tampilkan/Sembunyikan Konten */
+    function toggleContent(id) {
+        const content = document.getElementById(id);
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+    
+    function copyCode(elementId) {
+        const code = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Kode berhasil disalin!");
+        });
+    }
+            </pre>
+        </div>
+    </div>
+    
+        </div>
+    </div>
+    <!-- ... tambahkan level 19 -->
+
+    <!-- ... tambahkan level 20 -->
+    
+    <!-- ... tambahkan level 16 sampai 15 -->
+
+</div>
+
+<script>
+    // Function to toggle content visibility
+    function toggleContent(levelId) {
+        const content = document.getElementById(levelId);
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+
+    // Function to copy code to clipboard
+    function copyCode(elementId) {
+        const code = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Code copied to clipboard!");
+        }).catch(() => {
+            alert("Failed to copy code.");
+        });
+    }
+
+    // tombol sanlin
+
+    function copyCode(id) {
+    var code = document.getElementById(id).textContent;
+    var textarea = document.createElement('textarea');
+    textarea.value = code;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    alert("Kode telah disalin ke clipboard!");
+}
+
+// section 14
+
+
+function toggleContent(id) {
+        const content = document.getElementById(id);
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function copyCode(elementId) {
+        const code = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Kode berhasil disalin!");
+        });
+    }
+
+    /* JavaScript untuk Image Slider */
+    let slideIndex = 0;
+
+    function showSlides() {
+        const slides = document.getElementsByClassName("slides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex - 1].style.display = "block";  
+        setTimeout(showSlides, 3000); // Ganti gambar setiap 3 detik
+    }
+
+    function changeSlide(n) {
+        slideIndex += n;
+        showSlides();
+    }
+
+    document.addEventListener("DOMContentLoaded", showSlides);
+
+
+    //level 15
+
+    function toggleContent(id) {
+        const content = document.getElementById(id);
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function copyCode(elementId) {
+        const code = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Kode berhasil disalin!");
+        });
+    }
+
+    /* JavaScript untuk Toggle Menu */
+    function toggleMenu() {
+        const navbarMenu = document.getElementById("navbarMenu");
+        navbarMenu.classList.toggle("active");
+    }
+
+    // level 16
+
+    function toggleContent(id) {
+        const content = document.getElementById(id);
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function copyCode(elementId) {
+        const code = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Kode berhasil disalin!");
+        });
+    }
+
+    /* JavaScript untuk Carousel */
+    let currentIndex = 0;
+    const slides = document.getElementsByClassName("carousel-item");
+    const dots = document.getElementsByClassName("dot");
+
+    function showSlide(index) {
+        if (index >= slides.length) currentIndex = 0;
+        if (index < 0) currentIndex = slides.length - 1;
+        
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        slides[currentIndex].style.display = "block";
+        dots[currentIndex].classList.add("active");
+    }
+
+    function moveSlide(n) {
+        currentIndex += n;
+        showSlide(currentIndex);
+    }
+
+    function currentSlide(n) {
+        currentIndex = n - 1;
+        showSlide(currentIndex);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        showSlide(currentIndex);
+    });
+
+
+    // level 17
+    function toggleContent(id) {
+        const content = document.getElementById(id);
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function copyCode(elementId) {
+        const code = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Kode berhasil disalin!");
+        });
+    }
+
+
+    // level 18
+
+    function toggleContent(id) {
+        const content = document.getElementById(id);
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function copyCode(elementId) {
+        const code = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Kode berhasil disalin!");
+        });
+    }
+
+</script>
+
+</body>
+</html>

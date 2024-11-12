@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Level 4</title>
+    <style>
+        /* Gaya dasar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            background-color: #333;
+            overflow: hidden;
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Level 4</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level3.html">Level 3</a></li>
+            <li><a href="level4.html">Level 4</a></li>
+            <li><a href="level5.html">Level 5</a></li>
+            <li><a href="level6.html">Level 6</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Elemen iframe -->
+        <section id="iframe">
+            <h2>1. Elemen iframe</h2>
+            <p>Elemen <code>&lt;iframe&gt;</code> memungkinkan kita untuk menyematkan halaman web lain di dalam halaman kita. Ini sering digunakan untuk menampilkan konten eksternal seperti video YouTube, peta Google, atau aplikasi lain yang dapat disematkan.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        width="560" height="315" 
+        title="Video YouTube" 
+        frameborder="0" allowfullscreen&gt;
+&lt;/iframe&gt;
+            </pre>
+        </section>
+
+        <!-- Elemen Audio -->
+        <section id="audio">
+            <h2>2. Elemen Audio</h2>
+            <p>Elemen <code>&lt;audio&gt;</code> digunakan untuk menambahkan file audio ke dalam halaman web. Elemen ini memungkinkan pengguna memutar audio dengan kontrol tambahan seperti play, pause, dan volume.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;audio controls&gt;
+    &lt;source src="audio/sample.mp3" type="audio/mpeg"&gt;
+    Browser Anda tidak mendukung elemen audio.
+&lt;/audio&gt;
+            </pre>
+        </section>
+
+        <!-- Elemen Video -->
+        <section id="video">
+            <h2>3. Elemen Video</h2>
+            <p>Elemen <code>&lt;video&gt;</code> mirip dengan elemen audio, tetapi digunakan untuk menambahkan file video. Elemen ini memiliki kontrol seperti play, pause, volume, dan fullscreen, serta dapat menampilkan berbagai format video seperti MP4, WebM, dan Ogg.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;video width="320" height="240" controls&gt;
+    &lt;source src="video/sample.mp4" type="video/mp4"&gt;
+    Browser Anda tidak mendukung elemen video.
+&lt;/video&gt;
+            </pre>
+        </section>
+
+        <!-- SVG (Scalable Vector Graphics) -->
+        <section id="svg">
+            <h2>4. SVG (Scalable Vector Graphics)</h2>
+            <p>SVG adalah format grafis berbasis vektor yang dapat diperbesar tanpa kehilangan kualitas. SVG dapat diintegrasikan langsung dalam HTML, dan cocok untuk ikon atau gambar yang membutuhkan fleksibilitas ukuran.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;svg width="100" height="100"&gt;
+    &lt;circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /&gt;
+&lt;/svg&gt;
+            </pre>
+        </section>
+
+        <!-- Meta Tags untuk SEO -->
+        <section id="meta">
+            <h2>5. Meta Tags untuk SEO</h2>
+            <p><code>Meta tags</code> membantu mesin pencari memahami konten halaman. Dengan penulisan meta tag yang tepat, halaman kita lebih mudah ditemukan dan mendapat ranking lebih tinggi di mesin pencari. Meta tag seperti <code>&lt;meta&gt;</code> digunakan untuk informasi terkait seperti deskripsi, kata kunci, dan penulis halaman.</p>
+            
+            <h3>Contoh Meta Tags:</h3>
+            <pre>
+&lt;meta name="description" content="Panduan lengkap HTML untuk pemula hingga mahir."&gt;
+&lt;meta name="keywords" content="HTML, tutorial HTML, belajar HTML, pemrograman web"&gt;
+&lt;meta name="author" content="Florysec"&gt;
+            </pre>
+        </section>
+
+        <!-- Elemen Picture -->
+        <section id="picture">
+            <h2>6. Elemen Picture untuk Gambar Responsif</h2>
+            <p>Elemen <code>&lt;picture&gt;</code> memungkinkan kita untuk menentukan berbagai versi gambar berdasarkan kondisi layar atau perangkat yang digunakan. Hal ini sangat penting untuk membuat website responsif dengan gambar yang optimal.</p>
+            
+            <h3>Contoh:</h3>
+            <pre>
+&lt;picture&gt;
+    &lt;source media="(min-width: 800px)" srcset="gambar-besar.jpg"&gt;
+    &lt;source media="(min-width: 400px)" srcset="gambar-sedang.jpg"&gt;
+    &lt;img src="gambar-kecil.jpg" alt="Gambar Responsif"&gt;
+&lt;/picture&gt;
+            </pre>
+        </section>
+
+    </main>
+</body>
+</html>

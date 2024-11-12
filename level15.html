@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tombol Modern dan Kode Contoh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+         
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2em;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+        }
+        .button-section {
+            margin: 20px;
+            max-width: 300px;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+        .copy-button {
+            padding: 5px 10px;
+            font-size: 14px;
+            color: #333;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+        }
+        .copy-button:hover {
+            background-color: #ddd;
+        }
+
+        /* Tombol Dasar */
+        .basic-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .basic-button:hover {
+            background-color: #555;
+        }
+
+        /* Tombol Hover dan Shadow */
+        .hover-shadow-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .hover-shadow-button:hover {
+            background-color: #218838;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Tombol Outline */
+        .outline-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #007bff;
+            background-color: transparent;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+        .outline-button:hover {
+            color: white;
+            background-color: #007bff;
+        }
+
+        /* Tombol Ripple */
+        .ripple-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #ff5722;
+            border: none;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .ripple-button:hover {
+            background-color: #e64a19;
+        }
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+        }
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Tombol Gradient */
+        .gradient-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+        .gradient-button:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Tombol Ikon */
+        .icon-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #17a2b8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .icon-button:hover {
+            background-color: #138496;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level14.html">Level 14</a></li>
+            <li><a href="level16.html">Level 16</a></li>
+        </ul>
+    </nav>
+
+    <h1>Macam-Macam Tombol Modern</h1>
+
+    <div class="button-container">
+        <div class="button-section">
+            <h3>Tombol Dasar</h3>
+            <button class="basic-button" onclick="alert('Tombol Dasar Diklik!')">Tombol Dasar</button>
+            <button class="copy-button" onclick="copyCode('.basic-button')">Salin Kode</button>
+            <pre><code>&lt;button class="basic-button"&gt;Tombol Dasar&lt;/button&gt;</code></pre>
+            <pre><code>/* CSS Tombol Dasar */</code></pre>
+            <pre><code>.basic-button {</code></pre>
+            <pre><code>    padding: 10px 20px;</code></pre>
+            <pre><code>    font-size: 16px;</code></pre>
+            <pre><code>    color: white;</code></pre>
+            <pre><code>    background-color: #333;</code></pre>
+            <pre><code>    border: none;</code></pre>
+            <pre><code>    border-radius: 5px;</code></pre>
+            <pre><code>    cursor: pointer;</code></pre>
+            <pre><code>    transition: background-color 0.3s ease;</code></pre>
+            <pre><code>}</code></pre>
+        </div>
+
+        <div class="button-section">
+            <h3>Tombol Hover & Shadow</h3>
+            <button class="hover-shadow-button" onclick="alert('Tombol Hover & Shadow Diklik!')">Tombol Hover & Shadow</button>
+            <button class="copy-button" onclick="copyCode('.hover-shadow-button')">Salin Kode</button>
+            <pre><code>&lt;button class="hover-shadow-button"&gt;Tombol Hover & Shadow&lt;/button&gt;</code></pre>
+            <pre><code>/* CSS Tombol Hover & Shadow */</code></pre>
+            <pre><code>.hover-shadow-button {</code></pre>
+            <pre><code>    padding: 10px 20px;</code></pre>
+            <pre><code>    font-size: 16px;</code></pre>
+            <pre><code>    color: white;</code></pre>
+            <pre><code>    background-color: #28a745;</code></pre>
+            <pre><code>    border: none;</code></pre>
+            <pre><code>    border-radius: 5px;</code></pre>
+            <pre><code>    cursor: pointer;</code></pre>
+            <pre><code>    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);</code></pre>
+            <pre><code>    transition: box-shadow 0.3s ease, background-color 0.3s ease;</code></pre>
+            <pre><code>}</code></pre>
+        </div>
+
+        <div class="button-section">
+            <h3>Tombol Outline</h3>
+            <button class="outline-button" onclick="alert('Tombol Outline Diklik!')">Tombol Outline</button>
+            <button class="copy-button" onclick="copyCode('.outline-button')">Salin Kode</button>
+            <pre><code>&lt;button class="outline-button"&gt;Tombol Outline&lt;/button&gt;</code></pre>
+            <pre><code>/* CSS Tombol Outline */</code></pre>
+            <pre><code>.outline-button {</code></pre>
+            <pre><code>    padding: 10px 20px;</code></pre>
+            <pre><code>    font-size: 16px;</code></pre>
+            <pre><code>    color: #007bff;</code></pre>
+            <pre><code>    background-color: transparent;</code></pre>
+            <pre><code>    border: 2px solid #007bff;</code></pre>
+            <pre><code>    border-radius: 5px;</code></pre>
+            <pre><code>    cursor: pointer;</code></pre>
+            <pre><code>    transition: color 0.3s ease, background-color 0.3s ease;</code></pre>
+            <pre><code>}</code></pre>
+        </div>
+
+        <div class="button-section">
+            <h3>Tombol Ripple</h3>
+            <button class="ripple-button" onclick="createRipple(event)">Tombol Ripple</button>
+            <button class="copy-button" onclick="copyCode('.ripple-button')">Salin Kode</button>
+            <pre><code>&lt;button class="ripple-button"&gt;Tombol Ripple&lt;/button&gt;</code></pre>
+            <pre><code>/* CSS Tombol Ripple */</code></pre>
+            <pre><code>.ripple-button {</code></pre>
+            <pre><code>    padding: 10px 20px;</code></pre>
+            <pre><code>    font-size: 16px;</code></pre>
+            <pre><code>    color: white;</code></pre>
+            <pre><code>    background-color: #ff5722;</code></pre>
+            <pre><code>    border: none;</code></pre>
+            <pre><code>    border-radius: 5px;</code></pre>
+            <pre><code>    position: relative;</code></pre>
+            <pre><code>    overflow: hidden;</code></pre>
+            <pre><code>    cursor: pointer;</code></pre>
+            <pre><code>    transition: background-color 0.3s ease;</code></pre>
+            <pre><code>}</code></pre>
+            <pre><code>@keyframes ripple-animation {</code></pre>
+            <pre><code>    to {</code></pre>
+            <pre><code>        transform: scale(4);</code></pre>
+            <pre><code>        opacity: 0;</code></pre>
+            <pre><code>    }</code></pre>
+            <pre><code>}</code></pre>
+        </div>
+
+    </div>
+
+    <script>
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = event.clientX - rect.left - size / 2;
+            const y = event.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            ripple.classList.add('ripple');
+            button.appendChild(ripple);
+
+            ripple.addEventListener('animationend', () => {
+                ripple.remove();
+            });
+        }
+
+        function copyCode(selector) {
+            const code = document.querySelector(selector).outerHTML;
+            const textArea = document.createElement('textarea');
+            textArea.value = code;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert("Kode telah disalin!");
+        }
+    </script>
+
+</body>
+</html>

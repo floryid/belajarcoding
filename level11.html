@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Level 5</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+        section {
+            padding: 1rem;
+            margin: 1rem;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Gaya Tabel */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Gaya Kode */
+        pre {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Level 5</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level3.html">Level 3</a></li>
+            <li><a href="level9.html">Level 9</a></li>
+            <li><a href="level10.html">Level 10</a></li>
+            <li><a href="level11.html">Level 11</a></li>
+            <li><a href="level12.html">Level 12</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Tabel HTML5 -->
+        <section>
+            <h2>1. Tabel HTML5</h2>
+            <p>Berikut adalah contoh penggunaan tabel sederhana:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Umur</th>
+                        <th>Kota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana</td>
+                        <td>25</td>
+                        <td>Jakarta</td>
+                    </tr>
+                    <tr>
+                        <td>Budi</td>
+                        <td>30</td>
+                        <td>Bandung</td>
+                    </tr>
+                    <tr>
+                        <td>Citra</td>
+                        <td>28</td>
+                        <td>Surabaya</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Contoh kode HTML:</strong></p>
+            <pre>
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Nama&lt;/th&gt;
+            &lt;th&gt;Umur&lt;/th&gt;
+            &lt;th&gt;Kota&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ana&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;Jakarta&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Budi&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;Bandung&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Citra&lt;/td&gt;
+            &lt;td&gt;28&lt;/td&gt;
+            &lt;td&gt;Surabaya&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </pre>
+            <p><strong>Contoh kode CSS untuk tabel:</strong></p>
+            <pre>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+            </pre>
+        </section>
+
+        <!-- Form HTML5 -->
+        <section>
+            <h2>2. Formulir HTML5</h2>
+            <p>Berikut adalah contoh formulir HTML dengan elemen input dasar:</p>
+            <form>
+                <label for="name">Nama:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="age">Umur:</label><br>
+                <input type="number" id="age" name="age"><br><br>
+
+                <label for="city">Kota:</label><br>
+                <input type="text" id="city" name="city"><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+            <p><strong>Contoh kode HTML:</strong></p>
+            <pre>
+&lt;form&gt;
+    &lt;label for="name"&gt;Nama:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for="age"&gt;Umur:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="number" id="age" name="age"&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for="city"&gt;Kota:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" id="city" name="city"&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+            <p><strong>Contoh kode CSS untuk form:</strong></p>
+            <pre>
+form label {
+    font-weight: bold;
+}
+form input[type="text"], form input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

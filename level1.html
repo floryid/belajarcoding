@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Dasar</title>
+    <style>
+        /* Gaya dasar */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+        /* Gaya utama konten */
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Dasar</h1>
+    </header>
+
+    <!-- Navbar dengan menu berjenjang -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a>
+                <a href="level2.html">Level 1</a>
+                <ul>
+                    <li><a href="#">Level 2</a>
+                        <ul>
+                            <li><a href="#">Level 3</a>
+                                <ul>
+                                    <li><a href="#">Level 4</a>
+                                        <ul>
+                                            <li><a href="#">Level 5</a>
+                                                <ul>
+                                                    <li><a href="#">Level 6</a>
+                                                        <ul>
+                                                            <li><a href="#">Level 7</a>
+                                                                <ul>
+                                                                    <li><a href="#">Level 8</a>
+                                                                        <ul>
+                                                                            <li><a href="#">Level 9</a>
+                                                                                <ul>
+                                                                                    <li><a href="#">Level 10</a></li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Konten utama -->
+    <main>
+        <section>
+            <h2>1. Struktur Dasar HTML</h2>
+            <p>Berikut adalah struktur dasar dari sebuah dokumen HTML:</p>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Konten Halaman --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </section>
+
+        <section>
+            <h2>2. Tag Umum</h2>
+            <h3>Heading (Judul)</h3>
+            <pre>
+&lt;h1&gt;Judul Utama&lt;/h1&gt;
+&lt;h2&gt;Sub Judul&lt;/h2&gt;
+            </pre>
+
+            <h3>Paragraf</h3>
+            <pre>
+&lt;p&gt;Ini adalah paragraf.&lt;/p&gt;
+            </pre>
+
+            <h3>Tautan</h3>
+            <pre>
+&lt;a href="https://example.com"&gt;Kunjungi Situs&lt;/a&gt;
+            </pre>
+
+            <h3>Gambar</h3>
+            <pre>
+&lt;img src="image.jpg" alt="Deskripsi Gambar"&gt;
+            </pre>
+
+            <h3>Daftar Berurutan</h3>
+            <pre>
+&lt;ol&gt;
+    &lt;li&gt;Item Pertama&lt;/li&gt;
+    &lt;li&gt;Item Kedua&lt;/li&gt;
+&lt;/ol&gt;
+            </pre>
+
+            <h3>Daftar Tidak Berurutan</h3>
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;Item Pertama&lt;/li&gt;
+    &lt;li&gt;Item Kedua&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+
+            <h3>Tabel</h3>
+            <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Kolom 1&lt;/th&gt;
+        &lt;th&gt;Kolom 2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Isi 1&lt;/td&gt;
+        &lt;td&gt;Isi 2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+        </section>
+
+        <section>
+            <h2>3. Formulir</h2>
+            <p>Contoh formulir dasar:</p>
+            <pre>
+&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="nama"&gt;Nama:&lt;/label&gt;
+    &lt;input type="text" id="nama" name="nama"&gt;
+    &lt;input type="submit" value="Kirim"&gt;
+&lt;/form&gt;
+            </pre>
+        </section>
+
+        <section>
+            <h2>4. Komentar HTML</h2>
+            <pre>
+&lt;!-- Ini adalah komentar --&gt;
+            </pre>
+        </section>
+
+        <section>
+            <h2>5. Format Teks</h2>
+            <h3>Cetak Tebal</h3>
+            <pre>
+&lt;b&gt;teks tebal&lt;/b&gt; atau &lt;strong&gt;teks tebal&lt;/strong&gt;
+            </pre>
+
+            <h3>Cetak Miring</h3>
+            <pre>
+&lt;i&gt;teks miring&lt;/i&gt; atau &lt;em&gt;teks miring&lt;/em&gt;
+            </pre>
+
+            <h3>Garis Bawah</h3>
+            <pre>
+&lt;u&gt;teks garis bawah&lt;/u&gt;
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

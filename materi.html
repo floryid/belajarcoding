@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, CSS, & JS Learning Levels</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+         
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 2rem;
+        }
+        .level-section {
+            background: #fff;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .level-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .level-header:hover {
+            color: #007BFF;
+        }
+        .level-content {
+            display: none;
+            padding: 1rem;
+            font-size: 0.95rem;
+        }
+        .btn-copy {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Struktur Pembelajaran HTML, CSS, & JS</h1>
+    <p>Mulai dari dasar hingga mahir, dari Level 1 hingga Level 15</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="materi.html">Materi Dasar</a></li>
+        <li><a href="struktur.html">Materi Lanjutan</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <!-- Template for each level section -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level1')">
+            Level 1: Pengenalan HTML
+        </div>
+        <div id="level1" class="level-content">
+            <p>Dasar-dasar HTML, struktur dokumen HTML, tag utama seperti <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, heading, paragraf, dan elemen teks lainnya.</p>
+            <button class="btn-copy" onclick="copyCode('level1-code')">Salin Kode</button>
+            <pre id="level1-code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Pengenalan HTML&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Selamat Datang di HTML&lt;/h1&gt;
+    &lt;p&gt;Ini adalah paragraf pertama Anda.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </div>
+    </div>
+
+    <!-- Tambahkan Level lainnya dengan struktur yang sama -->
+    <div class="level-section">
+        <div class="level-header" onclick="toggleContent('level2')">
+            Level 2: Teks dan Format Dasar HTML
+        </div>
+        <div id="level2" class="level-content">
+            <p>Tag pemformatan seperti <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>, dan penggunaan tautan dengan <code>&lt;a&gt;</code>.</p>
+            <button class="btn-copy" onclick="copyCode('level2-code')">Salin Kode</button>
+            <pre id="level2-code">
+&lt;p&gt;&lt;b&gt;Bold&lt;/b&gt; teks dan &lt;i&gt;Italic&lt;/i&gt; teks&lt;/p&gt;
+&lt;a href="https://example.com"&gt;Kunjungi Example&lt;/a&gt;
+            </pre>
+        </div>
+    </div>
+
+    <!-- ... tambahkan level 3 sampai 15 -->
+
+
+</div>
+<script>
+    // Function to toggle content visibility
+    function toggleContent(levelId) {
+        const content = document.getElementById(levelId);
+        content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+
+    // Function to copy code to clipboard
+    function copyCode(elementId) {
+        const code = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            alert("Code copied to clipboard!");
+        }).catch(() => {
+            alert("Failed to copy code.");
+        });
+    }
+</script>
+
+
+</body>
+</html>

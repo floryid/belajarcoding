@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengenalan HTML, CSS, dan JavaScript</title>
+    <style>
+        /* Gaya dasar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            background-color: #333;
+            overflow: hidden;
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pengenalan HTML, CSS, dan JavaScript</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#html">Apa itu HTML?</a></li>
+            <li><a href="#css">Apa itu CSS?</a></li>
+            <li><a href="#js">Apa itu JavaScript?</a></li>
+            <li><a href="level1.html">Ayo Belajar</a></li>
+            <li><a href="struktur.html">Ayo Belajar Tingkat Lanjut</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Apa itu HTML? -->
+        <section id="html">
+            <h2>Apa itu HTML?</h2>
+            <p>HTML (HyperText Markup Language) adalah bahasa markah yang digunakan untuk membuat dan menyusun halaman web. HTML memberikan struktur dasar untuk konten halaman, seperti teks, gambar, tautan, dan elemen lainnya.</p>
+
+            <h3>Struktur Dasar HTML:</h3>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Judul Halaman&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Selamat datang di halaman web&lt;/h1&gt;
+        &lt;p&gt;Ini adalah paragraf pertama saya!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <p>HTML menggunakan elemen-elemen seperti <code>&lt;h1&gt;</code> untuk judul, <code>&lt;p&gt;</code> untuk paragraf, dan <code>&lt;a&gt;</code> untuk tautan. Elemen-elemen ini menyusun konten halaman web secara hierarkis.</p>
+        </section>
+
+        <!-- Apa itu CSS? -->
+        <section id="css">
+            <h2>Apa itu CSS?</h2>
+            <p>CSS (Cascading Style Sheets) adalah bahasa yang digunakan untuk mendesain tampilan halaman web. Dengan CSS, kita dapat mengubah warna, ukuran font, layout, dan banyak aspek desain lainnya dari elemen HTML yang ada.</p>
+
+            <h3>Contoh CSS untuk Mengubah Warna Teks:</h3>
+            <pre>
+h1 {
+    color: #4CAF50;
+}
+
+p {
+    font-size: 18px;
+}
+            </pre>
+            <p>CSS bekerja dengan memilih elemen HTML dan kemudian menetapkan gaya untuk elemen tersebut. Sebagai contoh, CSS di atas memilih elemen <code>&lt;h1&gt;</code> dan mengubah warnanya menjadi hijau, serta memilih elemen <code>&lt;p&gt;</code> dan mengubah ukuran font-nya menjadi 18px.</p>
+        </section>
+
+        <!-- Apa itu JavaScript? -->
+        <section id="js">
+            <h2>Apa itu JavaScript?</h2>
+            <p>JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi dinamis dan interaktif. Dengan JavaScript, kita dapat menambahkan efek visual, menangani event (misalnya klik tombol), dan berinteraksi dengan pengguna.</p>
+
+            <h3>Contoh JavaScript untuk Menampilkan Pesan:</h3>
+            <pre>
+&lt;button onclick="myFunction()"&gt;Klik Saya&lt;/button&gt;
+
+&lt;script&gt;
+    function myFunction() {
+        alert("Halo, dunia!");
+    }
+&lt;/script&gt;
+            </pre>
+            <p>JavaScript di atas menambahkan sebuah tombol yang, ketika diklik, akan menampilkan pesan peringatan "Halo, dunia!". JavaScript memungkinkan interaksi yang lebih kaya dengan pengguna di halaman web.</p>
+        </section>
+
+    </main>
+</body>
+</html>

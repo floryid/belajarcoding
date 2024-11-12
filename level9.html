@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Level 9 - Formulir</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+          
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            background-color: white;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        /* Styling untuk Input dan Form */
+        input[type="text"], input[type="email"], input[type="password"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"], button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover, button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling untuk Form */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Styling untuk Elemen Checkbox */
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        /* Styling untuk Responsif */
+        @media screen and (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            form {
+                width: 100%;
+            }
+
+            header {
+                padding: 1rem;
+            }
+        }
+
+        /* Styling untuk Paragraph dan Code */
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Level 9 - Formulir</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level3.html">Level 3</a></li>
+            <li><a href="level4.html">Level 4</a></li>
+            <li><a href="level5.html">Level 5</a></li>
+            <li><a href="level6.html">Level 6</a></li>
+            <li><a href="level7.html">Level 7</a></li>
+            <li><a href="level8.html">Level 8</a></li>
+            <li><a href="level9.html">Level 9</a></li>
+            <li><a href="level10.html">Level 10</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>1. Formulir Pendaftaran</h2>
+            <p>Berikut adalah contoh formulir pendaftaran yang menggunakan berbagai input HTML dan penataan menggunakan CSS:</p>
+
+            <!-- Formulir Pendaftaran -->
+            <form action="/submit-form" method="POST">
+                <label for="fullname">Nama Lengkap</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Masukkan nama lengkap" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+                <label for="password">Kata Sandi</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required>
+
+                <label for="bio">Biografi</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Tulis biografi Anda..."></textarea>
+
+                <label for="gender">Jenis Kelamin</label>
+                <select id="gender" name="gender">
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                    <option value="other">Lainnya</option>
+                </select>
+
+                <label for="newsletter">Langganan Berita</label>
+                <input type="checkbox" id="newsletter" name="newsletter" value="yes"> Daftar untuk langganan berita
+
+                <input type="submit" value="Daftar">
+            </form>
+
+            <p><strong>Contoh Kode HTML untuk Formulir:</strong></p>
+            <pre>
+&lt;form action="/submit-form" method="POST"&gt;
+    &lt;label for="fullname"&gt;Nama Lengkap&lt;/label&gt;
+    &lt;input type="text" id="fullname" name="fullname" placeholder="Masukkan nama lengkap" required&gt;
+
+    &lt;label for="email"&gt;Email&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" placeholder="Masukkan email" required&gt;
+
+    &lt;label for="password"&gt;Kata Sandi&lt;/label&gt;
+    &lt;input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required&gt;
+
+    &lt;label for="bio"&gt;Biografi&lt;/label&gt;
+    &lt;textarea id="bio" name="bio" rows="4" placeholder="Tulis biografi Anda..."&gt;&lt;/textarea&gt;
+
+    &lt;label for="gender"&gt;Jenis Kelamin&lt;/label&gt;
+    &lt;select id="gender" name="gender"&gt;
+        &lt;option value="male"&gt;Laki-laki&lt;/option&gt;
+        &lt;option value="female"&gt;Perempuan&lt;/option&gt;
+        &lt;option value="other"&gt;Lainnya&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;label for="newsletter"&gt;Langganan Berita&lt;/label&gt;
+    &lt;input type="checkbox" id="newsletter" name="newsletter" value="yes"&gt; Daftar untuk langganan berita
+
+    &lt;input type="submit" value="Daftar"&gt;
+&lt;/form&gt;
+            </pre>
+            
+            <h2>2. CSS yang Digunakan:</h2>
+            <p>Berikut adalah kode CSS yang digunakan untuk menata formulir:</p>
+            <pre>
+/* Gaya Umum */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    background-color: white;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Styling untuk Input dan Form */
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"], button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #45a049;
+}
+
+/* Styling untuk Form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Styling untuk Elemen Checkbox */
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Styling untuk Responsif */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    header {
+        padding: 1rem;
+    }
+}
+
+pre {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    overflow-x: auto;
+}
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

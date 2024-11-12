@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Level 6</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+        section {
+            padding: 1rem;
+            margin: 1rem;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Gaya Video dan Audio */
+        video, audio {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* Button untuk Interaksi LocalStorage */
+        .btn-save {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-save:hover {
+            background-color: #45a049;
+        }
+
+        /* Gaya Kode */
+        pre {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Level 6</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level3.html">Level 3</a></li>
+            <li><a href="level4.html">Level 4</a></li>
+            <li><a href="level5.html">Level 5</a></li>
+            <li><a href="level6.html">Level 6</a></li>
+            <li><a href="level7.html">Level 7</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Video HTML5 -->
+        <section>
+            <h2>1. Video HTML5</h2>
+            <p>Berikut adalah contoh penyematan video HTML5:</p>
+            <video controls>
+                <source src="sample-video.mp4" type="video/mp4">
+                Browser Anda tidak mendukung elemen video.
+            </video>
+            <p><strong>Contoh kode HTML:</strong></p>
+            <pre>
+&lt;video controls&gt;
+    &lt;source src="sample-video.mp4" type="video/mp4"&gt;
+    Browser Anda tidak mendukung elemen video.
+&lt;/video&gt;
+            </pre>
+        </section>
+
+        <!-- Audio HTML5 -->
+        <section>
+            <h2>2. Audio HTML5</h2>
+            <p>Berikut adalah contoh penyematan audio HTML5:</p>
+            <audio controls>
+                <source src="sample-audio.mp3" type="audio/mp3">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+            <p><strong>Contoh kode HTML:</strong></p>
+            <pre>
+&lt;audio controls&gt;
+    &lt;source src="sample-audio.mp3" type="audio/mp3"&gt;
+    Browser Anda tidak mendukung elemen audio.
+&lt;/audio&gt;
+            </pre>
+        </section>
+
+        <!-- Local Storage HTML5 -->
+        <section>
+            <h2>3. Menyimpan Data dengan LocalStorage</h2>
+            <p>Gunakan LocalStorage untuk menyimpan data di browser:</p>
+            <textarea id="dataStorage" rows="4" cols="50" placeholder="Masukkan data Anda"></textarea><br>
+            <button class="btn-save" onclick="saveData()">Simpan Data</button>
+
+            <script>
+                function saveData() {
+                    const data = document.getElementById('dataStorage').value;
+                    if (data) {
+                        localStorage.setItem('userData', data);
+                        alert('Data disimpan!');
+                    } else {
+                        alert('Masukkan data terlebih dahulu.');
+                    }
+                }
+
+                // Mengambil data dari localStorage saat halaman dimuat
+                window.onload = function() {
+                    const savedData = localStorage.getItem('userData');
+                    if (savedData) {
+                        document.getElementById('dataStorage').value = savedData;
+                    }
+                }
+            </script>
+
+            <p><strong>Contoh kode JavaScript:</strong></p>
+            <pre>
+function saveData() {
+    const data = document.getElementById('dataStorage').value;
+    if (data) {
+        localStorage.setItem('userData', data);
+        alert('Data disimpan!');
+    } else {
+        alert('Masukkan data terlebih dahulu.');
+    }
+}
+
+window.onload = function() {
+    const savedData = localStorage.getItem('userData');
+    if (savedData) {
+        document.getElementById('dataStorage').value = savedData;
+    }
+}
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

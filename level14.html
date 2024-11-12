@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 14 HTML - Membuat Slide Show</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            background-color: white;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+        .slide {
+            display: none;
+            text-align: center;
+        }
+        .slide img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .dot-container {
+            text-align: center;
+            padding: 10px;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+        .code-container {
+            position: relative;
+            margin-top: 1rem;
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .copy-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Level 14 - Membuat Slide Show</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level13.html">Level 13</a></li>
+            <li><a href="level15.html">Level 15</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Pengenalan Slide Show</h2>
+            <p>Slide show di HTML bisa dibuat menggunakan CSS dan JavaScript untuk mengatur transisi antar gambar. Di sini, kita akan belajar cara membuat slide show sederhana dengan kontrol navigasi.</p>
+        </section>
+        <section>
+            <h2>Contoh Implementasi Slide Show</h2>
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1">
+                </div>
+                <div class="slide fade">
+                    <img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2">
+                </div>
+                <div class="slide fade">
+                    <img src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slide 3">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+            <h2>Kode HTML</h2>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode('htmlCode')">Salin Kode</button>
+                <pre id="htmlCode">&lt;div class="slideshow-container"&gt;
+    &lt;div class="slide fade"&gt;
+        &lt;img src="https://via.placeholder.com/800x400?text=Slide+1" alt="Slide 1"&gt;
+    &lt;/div&gt;
+    &lt;div class="slide fade"&gt;
+        &lt;img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slide 2"&gt;
+    &lt;/div&gt;
+    &lt;div class="slide fade"&gt;
+        &lt;img src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slide 3"&gt;
+    &lt;/div&gt;
+    &lt;a class="prev" onclick="plusSlides(-1)"&gt;&#10094;&lt;/a&gt;
+    &lt;a class="next" onclick="plusSlides(1)"&gt;&#10095;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="dot-container"&gt;
+    &lt;span class="dot" onclick="currentSlide(1)"&gt;&lt;/span&gt;
+    &lt;span class="dot" onclick="currentSlide(2)"&gt;&lt;/span&gt;
+    &lt;span class="dot" onclick="currentSlide(3)"&gt;&lt;/span&gt;
+&lt;/div&gt;
+                </pre>
+            </div>
+
+            <h2>Kode CSS</h2>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode('cssCode')">Salin Kode</button>
+                <pre id="cssCode">/* Slide Show Container */
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+}
+.slide {
+    display: none;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+                </pre>
+            </div>
+
+            <h2>Kode JavaScript</h2>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode('jsCode')">Salin Kode</button>
+                <pre id="jsCode">let slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+}
+                </pre>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function copyCode(elementId) {
+            const code = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert("Kode berhasil disalin!");
+            }).catch(err => {
+                console.error("Gagal menyalin kode: ", err);
+            });
+        }
+
+        // JavaScript untuk Slide Show
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>

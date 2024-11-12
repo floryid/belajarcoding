@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Level 8 - Layout Grid dan Styling</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+            
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            background-color: white;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2196F3;
+        }
+
+        /* Layout Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .grid-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Styling untuk Responsif */
+        @media screen and (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Level 8 - Layout Grid dan Styling</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a></li>
+            <li><a href="level3.html">Level 3</a></li>
+            <li><a href="level4.html">Level 4</a></li>
+            <li><a href="level5.html">Level 5</a></li>
+            <li><a href="level6.html">Level 6</a></li>
+            <li><a href="level7.html">Level 7</a></li>
+            <li><a href="level8.html">Level 8</a></li>
+            <li><a href="level9.html">Level 9</a></li>
+            <li><a href="level10.html">Level 10</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>1. Layout dengan CSS Grid</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>Item 1</h3>
+                    <p>Deskripsi untuk Item 1. Tata letak ini menggunakan CSS Grid.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Item 2</h3>
+                    <p>Deskripsi untuk Item 2 dengan tata letak CSS Grid.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Item 3</h3>
+                    <p>Deskripsi untuk Item 3 yang juga menggunakan CSS Grid.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Item 4</h3>
+                    <p>Deskripsi untuk Item 4, responsif dan rapi dengan CSS Grid.</p>
+                </div>
+            </div>
+
+            <p><strong>Contoh Kode HTML untuk Layout Grid:</strong></p>
+            <pre>
+&lt;div class="grid-container"&gt;
+    &lt;div class="grid-item"&gt;
+        &lt;h3&gt;Item 1&lt;/h3&gt;
+        &lt;p&gt;Deskripsi untuk Item 1.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-item"&gt;
+        &lt;h3&gt;Item 2&lt;/h3&gt;
+        &lt;p&gt;Deskripsi untuk Item 2.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-item"&gt;
+        &lt;h3&gt;Item 3&lt;/h3&gt;
+        &lt;p&gt;Deskripsi untuk Item 3.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-item"&gt;
+        &lt;h3&gt;Item 4&lt;/h3&gt;
+        &lt;p&gt;Deskripsi untuk Item 4.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+
+            <h2>2. Kode CSS untuk Grid Layout</h2>
+            <p><strong>Contoh Kode CSS:</strong></p>
+            <pre>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2196F3;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.grid-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+pre {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    overflow-x: auto;
+}
+            </pre>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet HTML Level 2</title>
+    <style>
+        /* Gaya dasar */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            min-width: 200px;
+            z-index: 1000;
+        }
+        nav ul li:hover > ul {
+            display: block;
+        }
+        nav ul ul li {
+            position: relative;
+        }
+        nav ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+        nav ul ul li a {
+            padding: 10px 20px;
+        }
+        
+        /* Responsif untuk tampilan mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul ul {
+                position: static;
+            }
+            nav ul li:hover > ul {
+                display: none;
+            }
+            nav ul li:focus-within > ul {
+                display: block;
+            }
+        }
+
+        /* Gaya utama konten */
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cheat Sheet HTML Level 2</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="level1.html">Level 1</a></li>
+            <li><a href="level2.html">Level 2</a>
+                <ul>
+                    <li><a href="#">Form Elements</a></li>
+                    <li><a href="#">Advanced Tables</a></li>
+                    <li><a href="#">Multimedia</a></li>
+                    <li><a href="#">Semantic Elements</a></li>
+                </ul>
+            </li>
+            <li><a href="level3.html">Level 3</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Form Elements -->
+        <section>
+            <h2>1. Form Elements</h2>
+            <p>HTML forms allow users to input data, such as text, selections, and buttons. Here are some additional form elements:</p>
+            
+            <h3>Input Types</h3>
+            <pre>
+&lt;form action="/submit" method="POST"&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+
+    &lt;label for="password"&gt;Password:&lt;/label&gt;
+    &lt;input type="password" id="password" name="password"&gt;
+
+    &lt;label for="date"&gt;Date:&lt;/label&gt;
+    &lt;input type="date" id="date" name="date"&gt;
+
+    &lt;label for="color"&gt;Choose a color:&lt;/label&gt;
+    &lt;input type="color" id="color" name="color"&gt;
+
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+            </pre>
+
+            <h3>Select and Option Groups</h3>
+            <pre>
+&lt;label for="car"&gt;Choose a car:&lt;/label&gt;
+&lt;select id="car" name="car"&gt;
+    &lt;optgroup label="Sedan"&gt;
+        &lt;option value="toyota"&gt;Toyota&lt;/option&gt;
+        &lt;option value="honda"&gt;Honda&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label="SUV"&gt;
+        &lt;option value="ford"&gt;Ford&lt;/option&gt;
+        &lt;option value="chevy"&gt;Chevy&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;
+            </pre>
+        </section>
+
+        <!-- Advanced Tables -->
+        <section>
+            <h2>2. Advanced Tables</h2>
+            <p>In HTML, tables can be enhanced with <code>colspan</code> and <code>rowspan</code> for complex layouts:</p>
+            <pre>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Product&lt;/th&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+        &lt;th colspan="2"&gt;Available&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Phone&lt;/td&gt;
+        &lt;td&gt;$299&lt;/td&gt;
+        &lt;td&gt;Online&lt;/td&gt;
+        &lt;td&gt;In-store&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Tablet&lt;/td&gt;
+        &lt;td&gt;$399&lt;/td&gt;
+        &lt;td rowspan="2"&gt;Limited&lt;/td&gt;
+        &lt;td&gt;Online Only&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+        </section>
+
+        <!-- Multimedia -->
+        <section>
+            <h2>3. Multimedia Elements</h2>
+            <p>Embedding videos and audio into HTML documents can be done using the <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> tags.</p>
+            
+            <h3>Embedding Video</h3>
+            <pre>
+&lt;video controls width="320" height="240"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.ogg" type="video/ogg"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+            </pre>
+
+            <h3>Embedding Audio</h3>
+            <pre>
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mp3"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+            </pre>
+        </section>
+
+        <!-- Semantic Elements -->
+        <section>
+            <h2>4. Semantic Elements</h2>
+            <p>Semantic elements like <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;article&gt;</code> add meaning to the HTML structure.</p>
+            
+            <h3>Example of Semantic HTML</h3>
+            <pre>
+&lt;header&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;section&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Article Title&lt;/h2&gt;
+        &lt;p&gt;Article content...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/section&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;Footer content&lt;/p&gt;
+&lt;/footer&gt;
+            </pre>
+        </section>
+    </main>
+</body>
+</html>
